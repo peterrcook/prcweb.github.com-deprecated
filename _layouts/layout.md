@@ -56,6 +56,14 @@
         font-weight: normal;
       }
 
+      div.showcase h4 a {
+        color: #eee;
+      }
+
+      div.showcase h4 a:hover {
+        color: #08C;
+      }
+
       div.content img {
         display: block;
         margin: 0 auto;

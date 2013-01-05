@@ -19,7 +19,7 @@ title: Async Visualisation
 <h3>Heat Matrix</h3>
 <p>The first is a 'heat matrix', which is a grid of squares coloured or shaded according to a given value. In this case, each row represents a topic and each column an attendee. The darker the value, the more times that attendee has been to a talk of that topic.</p>
 
-<img title="Async Category-Attendence Matrix" src="/img/Async-Category-Attendence-Matrix1.jpg" alt="Async Category-Attendence Matrix" width="593" height="306" />
+<a href="http://static.dharmafly.com/asyncjs-attendee-matrix/"><img title="Async Category-Attendence Matrix" src="/img/Async-Category-Attendence-Matrix1.jpg" alt="Async Category-Attendence Matrix" width="593" height="306" /></a>
 
 <p>The rows and columns can be sorted by clicking on their titles. For example, if you want to ascertain someone's favourite topics, click on their name and their topics, ranked by attendance, will be shown.</p>
 
@@ -29,7 +29,7 @@ title: Async Visualisation
 <h3>Avatars ranked by attendance</h3>
 <p>The second visualisation has a friendlier look as it uses the avatars of the attendees and lists them in order of attendance, according to a chosen topic.</p>
 
-<img class="aligncenter size-full wp-image-490" title="Async Categorised Attendence" src="/img/Async-Categorised-Attendence.jpg" alt="" width="517" height="393" />
+<a href="http://static.dharmafly.com/asyncjs-attendee-categories/"><img title="Async Categorised Attendence" src="/img/Async-Categorised-Attendence.jpg" alt="" width="517" height="393" /></a>
 
 <p>The user can click on a topic and all the attendees of that topic's sessions are displayed with the most frequent attendee listed first.</p>
 
