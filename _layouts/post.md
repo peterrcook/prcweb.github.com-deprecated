@@ -1,0 +1,7 @@
+---
+layout: layout
+---
+
+<div class="content">
+    {{ content }}
+</div>
