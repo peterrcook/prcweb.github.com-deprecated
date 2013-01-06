@@ -1,0 +1,14 @@
+---
+layout: post
+title: Aboutme
+---
+<div class="jumbotron">
+<p class="lead">I'm a freelance web developer (front-end and server-side).</p>
+<ul>
+	<li>Based in Lewes, East Sussex, UK</li>
+	<li>Loves data visualisation</li>
+	<li>Background in graphics and computer aided design</li>
+	<li>Keen to work with others on interesting projects</li>
+</ul>
+</div>
+

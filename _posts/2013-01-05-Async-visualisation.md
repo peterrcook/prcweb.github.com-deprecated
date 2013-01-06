@@ -1,6 +1,7 @@
 ---
 layout: post
 title: async visualisation
+permalink: async-visualisation
 ---
 <h3>Visualising event attendance using D3.js</h3>
 
