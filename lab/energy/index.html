@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>Energy use</title>
+    <script type="text/javascript" src="/js/d3.v2.js"></script>
+    <style type="text/css">
+      text {-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
+      #main {width: 600px; margin-left: auto; margin-right: auto; font: 14px Helvetica Neue;}
+      h1 {font-size: 36px; font-weight: 300;}
+      h2 {font-size: 24px; font-weight: 300;}
+
+      #chart path {-webkit-transition-property: fill; -webkit-transition-duration: 0.2s;}
+  
+      svg text {font-family: helvetica, sans-serif; fill: #555;}
+      #status {cursor: pointer; text-anchor: middle;}
+      #status g.first text.time {font-size: 14px;}
+      #status g.first text.value {font-size: 44px; font-weight: bold;}
+      #status g.first text.units {font-size: 12px;}
+
+      #status g.second text.time, #status g.third text.time {font-size: 12px;}
+      #status g.second text.value, #status g.third text.value {font-size: 30px; fill: #555;}
+      #status g.second text.units, #status g.third text.units {font-size: 10px;}
+
+      svg text.day.label {font-size: 16px; font-weight: bold; fill: #bbb; pointer-events: none;}
+      svg text.time.label {font-size: 12px; font-weight: bold; fill: #bbb; pointer-events: none;}
+
+      .week_step {font-size: 80px; fill: #555; font-weight: bold; font-family: helvetica, sans-serif; cursor: pointer;}
+    </style>
+  </head>
+  <body>
+    <div id="main">
+        <h1>Visualisation of domestic energy consumption</h1>
+        <p>A visualisation of energy data taken from a <a href="http://www.currentcost.com/product-cc128.html" target="_blank">Current Cost CC128</a> over the course of half a year.</p>
+        <svg width="600" height="600">
+          <g id="status">
+            <g class="first">
+              <text class="time" x="300" y="237"></text>
+              <text class="value" x="300" y="276"></text>
+              <text class="units" x="300" y="290"></text>
+            </g>
+            <g class="second">
+              <text class="time" x="255" y="320"></text>
+              <text class="value" x="255" y="347"></text>
+              <text class="units" x="255" y="360"></text>
+            </g>
+            <g class="third">
+              <text class="time" x="345" y="320">Year</text>
+              <text class="value" x="345" y="347"></text>
+              <text class="units" x="345" y="360"></text>
+            </g>
+          </g>
+          <text class="week_step" id="downweek" x="70" y="570">-</text>
+          <text class="week_step" id="upweek" x="500" y="570">+</text>
+        </svg>
+        <p>A week is shown at a time, use the + and - buttons to step through the weeks.</p>
+        <p>Each day is represented by a ring, subdivided into 24 hourly segments. Each segment is shaded according to the electricity consumed in that hour.</p>
+        <p>Hover over any segment and the central display shows the electricity consumed in that day and hour.</p>
+        <p>Click the central display to cycle between 1) units consumed, 2) monetary cost and 3) CO2 emitted.</p>
+        <h2>Implementation</h2>
+        <p>A <a href="http://www.currentcost.com/product-cc128.html" target="_blank">Current Cost CC128</a> to measure the electricity consumption, a <a href="http://www.currentcost.com/product-datacable.html" target="_blank">data cable</a> to transfer the data in realtime to a netbook.</p>
+        <p>A simple Python script to save the incoming data to a database. A PHP script to process and serve out the data. Finally some html, css, JavaScript and the marvellous <a href="http://d3js.org/" target="_blank">d3.js</a> data-driven documents library.</p>
+        <p>A big thank you to <a href="http://d3js.org/" target="_blank">D3.js</a> and <a href="http://l4rp.com/" target="_blank">L4RP</a>.</p>
+        <div id="footer">Copyright &copy; 2012 <a href="http://www.prcweb.co.uk">Peter Cook</a></div>
+    </div>
+    <script type="text/javascript" src="/js/energy.js"></script>
+  </body>
+</html>
