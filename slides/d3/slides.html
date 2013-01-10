@@ -1,0 +1,464 @@
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>D3.js - Data Visualisation in the Browser</title>
+
+		<meta name="description" content="An Async talk on D3.js">
+		<meta name="author" content="Peter Cook">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h1>D3.js</h1>
+					<h3>Data Visualisation in the Browser</h3>
+					<p>
+						<small>by <a href="http://prcweb.co.uk">Peter Cook</a> / <a href="http://twitter.com/prcweb">@prcweb</a> / <a href="http://www.prcweb.co.uk">www.prcweb.co.uk</a></small>
+					</p>
+				</section>
+
+<!--				<section>
+					<h2>About me</h2>
+					<p>Background in computer-graphics and computer-aided-design</p>
+					<p>Currently a freelance web developer</p>
+					<br>
+					<h3>Contact</h3>
+					<p>Email: peter.prcweb@gmail.com</p>
+					<p>Twitter: @prcweb</p>
+					<p>Website: prcweb.co.uk</p>
+				</section> -->
+
+				<section>
+					<h2>D3</h2>
+					<p>D3.js is a JavaScript library for (facilitating) data visualisation in the browser (mostly)</p>
+
+<!--					<aside class="notes">
+						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+					</aside>-->
+				</section>
+
+				<section>
+					<h2>Genesis</h2>
+					<ul>
+						<li>Descends from <a href="http://mbostock.github.com/protovis/">Protovis</a> (<a href="http://mbostock.github.com/d3/tutorial/protovis.html">differences</a>)</li>
+						<li>Primary author <a href="">Mike Bostock</a></li>
+						<li>Project began in 2010</li>
+						<li>8th most starred project on Github</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Order of play</h2>
+					<ul>
+						<li>Examples</li>
+						<li>Overview of framework</li>
+						<li>Coding examples</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Examples</h1>
+				</section>
+
+				<section>
+					<h2>Stacked bar chart</h2>
+					<img src="../img/3886208.jpg">
+					<p>CSV data bound to SVG elements</p>
+					<p><a href="http://bl.ocks.org/3886208">Live example</a></p>
+				</section>
+
+				<section>
+					<h2>Pie chart</h2>
+					<img src="../img/1346410.jpg">
+					<p>Layouts, transitions</p>
+					<p><a href="http://bl.ocks.org/1346410">Live example</a></p>					
+				</section>
+
+				<section>
+					<h2>Custom charting</h2>
+					<img src="../img/energy_doughnut.jpg">
+					<p>Energy data bound to SVG elements, events</p>
+					<p><a href="http://localhost/examples/energy.htm">Live example</a></p>					
+				</section>
+
+				<section>
+					<h2>World map</h2>
+					<img src="../img/worldmap.jpg">
+					<p>GeoJSON, projection, events</p>
+					<p><a href="http://localhost/examples/worldmap.html">Live example</a></p>					
+				</section>
+
+				<section>
+					<h2>GOV.UK analytics</h2>
+					<img src="../img/govuk.jpg">
+					<p><a href="http://digital.cabinetoffice.gov.uk/2012/11/12/updating-performance-dashboard/">About</a></p>
+					<p><a href="https://www.gov.uk/performance/dashboard">Live example</a></p>					
+				</section>
+
+				<section>
+					<h2>New York Times</h2>
+					<img src="../img/nytimes-shift.jpg">
+					<p>SVG, paths, interaction</p>
+					<p><a href="http://www.nytimes.com/interactive/2012/10/15/us/politics/swing-history.html">Live example</a></p>					
+				</section>
+
+				<section>
+					<h2>Loads of examples</h2>
+					<ul>
+						<li><a href="https://github.com/mbostock/d3/wiki/Gallery">github.com/mbostock/d3/wiki/Gallery</a></li>
+						<li><a href="http://bl.ocks.org/mbostock">bl.ocks.org/mbostock</a></li>
+						<li><a href="http://www.jasondavies.com/">www.jasondavies.com/</a></li>
+						<li>#d3js</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Why D3?</h1>
+				</section>
+
+				<section>
+					<h2>Other libraries</h2>
+					<ul>
+						<li>Highcharts (SVG, high-level, <a href="http://www.highcharts.com/demo/">examples</a>)
+						<li>InfoVis (Canvas, <a href="http://philogb.github.com/jit/demos.html">examples</a>)</li>
+						<li>Processing.js (Canvas, drawing, <a href="http://processingjs.org/exhibition/">examples</a>)</li>
+						<li>Raphael.js (SVG library, low-level, <a href="http://raphaeljs.com/">examples</a>)</li>
+						<li>Many others</li>
+				</section>
+
+				<section>
+					<h2>D3</h2>
+					<h3>'Data-Driven Documents'</h3>
+					<ul>
+						<li>Bind data to DOM elements</li>
+						<li>Create/remove/transform DOM elements</li>
+						<li>&lt;p&gt;, &lt;td&gt;, &lt;rect&gt;, &lt;line&gt;, &lt;path&gt; etc.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Why use the DOM?</h2>
+					<ul>
+						<li>Styling (CSS)</li>
+						<li>Interaction (events)</li>
+						<li>Flexibility (anything that can be represented using HTML, CSS &amp; SVG can be made with D3)</li>
+						<li>Debugging (Chrome Developer Tools, Firebug)</li>
+						<li>Familiarity (most web developers familiar with the DOM)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Reasons not to choose D3</h2>
+					<ul>
+						<li>Learning curve</li>
+						<li>Requires SVG for non-trivial graphical visualisations</li> 
+					</ul>
+				</section>
+
+				<section>
+					<h2>Browser support</h2>
+					<ul>
+						<li>Modern browsers</li>
+						<li>D3 is <a href="https://github.com/mbostock/d3/wiki">tested</a> against Firefox, Chrome (Chromium), Safari (WebKit), Opera and IE9</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Other &lsquo;Why D3&rsquo; resources</h2>
+					<ul>
+						<li>D3 <a href="http://d3js.org/">website</a></li>
+						<li>D3: Data-Driven Documents <a href="http://vis.stanford.edu/papers/d3">paper</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Overview of D3</h1>
+				</section>
+
+				<section>
+					<h2>Modules</h2>
+					<ul>
+						<li>Core (selections, transitions, requests etc.)</li>
+						<li>Scales (map input to output)</li>
+						<li>SVG (generate SVG)</li>
+						<li>Time (time formatting, math)</li>
+						<li>Layouts (chord, cluster, force, hierarchy etc.)</li>
+						<li>Geography (geography, projections)</li>
+						<li>Geometry (Voronoi, quadtree, polygon, hull)</li>
+						<li>Behaviour (drag, zoom)</li>
+					</ul>
+					<p></p>
+					<p><a href="https://github.com/mbostock/d3/wiki/API-Reference">Documentation</a></p>
+				</section>
+
+				<section>
+					<h2>Core - selections</h2>
+					<p>Similar to, but not the same as, jQuery</p>
+					<pre><code>
+/* jQuery */
+$('td'); //Returns array (wrapped set) of elements
+
+/* D3 */
+d3.select('table'); //Returns array of arrays [[&lt;table&gt;]] 
+d3.selectAll('td'); //[[&lt;td&gt;, &lt;td&gt;, &lt;td&gt;, &lt;td&gt;]]
+d3.selectAll('tr').selectAll('td'); //[[&lt;td&gt;, &lt;td&gt;], [&lt;td&gt;, &lt;td&gt;]]
+
+d3.selectAll('td').text('Some data');
+					</code></pre>
+					<p><a href="https://github.com/mbostock/d3/wiki/Selections">Documentation</a></p>
+				</section>
+
+				<section>
+					<h2>Core - selections</h2>
+					<h3>Data binding</h3>
+					<pre><code>
+/* Data */
+var d = [6, 1, 4, 2, 5];
+
+/* Selection */
+var selection = d3.selectAll('li');
+
+/* Bind data to elements */
+var updateSelection = selection.data(d);
+updateSelection[0][0].__data__; // 6
+updateSelection.text(function(d) {return d;});
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Core - other</h2>
+					<pre><code>
+/* Transitions */
+d3.select('p').transition().style('font-size', '40px')
+
+/* Arrays */
+a = [4, 1, 2, 6, 10]
+d3.extent(a) //returns [1, 10]
+d3.permute(['a', 'b', 'c'], [1, 2, 0]) //returns ['b', 'c', 'a']
+
+/* Requests - similar to jQuery.get() etc. */
+
+/* Formatting */
+var zero = d3.format("04d")
+zero(2) // returns '0002'
+
+/* Colours */
+var red = d3.rgb('red')
+red.r // 255
+red.g // 0
+var darkerRed = red.darker()
+darker.r // 178
+d3.select('p').style('color', darkerRed)
+					</code></pre>
+					<p><a href="https://github.com/mbostock/d3/wiki/Core">Documentation</a></p>
+				</section>
+
+				<section>
+					<h2>Scales</h2>
+					<p>Scales are functions that map from an input domain to an output range</p>
+					<pre><code>
+var s = d3.scale.linear().domain([0, 1]).range([-10, 10])
+s(0) // -10
+s(0.5) // 0
+
+var cs = d3.scale.linear().domain([0, 1]).range(['white', 'red'])
+cs(0) // '#ffffff'
+cs(1) // '#ff0000'
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>SVG</h2>
+					<p>Add SVG elements like any other element</p>
+					<pre><code>
+d3.select('svg').append('circle')
+	.attr('cx', 40).attr('cy', 40).attr('r', 40)
+	.style('fill', 'red');
+					</pre></code>
+					<p>...or use an SVG generator to generate path data</p>
+					<pre><code>
+/* Create SVG path data generator */
+var line = d3.svg.line()
+    .x(function(d) { return d.x; })
+    .y(function(d) { return d.y; });
+
+/* Data */
+var d = [{x: 10, y:10}, {x:20, y:30}, {x:30, y:20}];
+
+/* Generate path data */
+line(d); // "M10,10L20,30L30,20"
+line.interpolate('basis');
+pathData = line(d); // "M10,10C10,10,10,10,11.666,13.333C13.333..."
+
+/* Add to the DOM */
+d3.select('svg').append('path').attr('d', pathData);
+
+//Other generators include arc, symbol, chord, diagonal
+					</pre></code>
+				</section>
+
+				<section>
+					<h2>SVG ctd.</h2>
+					<ul>
+						<li>Axes (for generating axes in SVG)</li>
+						<li>Controls (for drawing selection areas)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Time</h2>
+					<pre><code>
+/* Time scales */
+first = new Date('1 Jan 2013');
+last = new Date('31 Dec 2013');
+
+var ts = d3.time.scale().domain([first, last]).range([0,1]);
+
+ts(new Date('10 Jan 2013')); // 0.0247
+
+/* Time intervals */
+d3.time.week(new Date('4 Jan 2013')); // Sun Dec 30 2012 00:00:00
+
+/* Counting */
+d3.time.dayOfYear('10 Jan 2013'); // 9
+					</pre></code>
+				</section>
+
+				<section>
+					<h2>Layouts</h2>
+					<ul>
+						<li>Bundle (<a href="http://bl.ocks.org/1044242">example</a>)</li>
+						<li>Chord (<a href="http://bl.ocks.org/1046712">example</a>)</li>
+						<li>Cluster (<a href="http://bl.ocks.org/4063570">example</a>)</li>
+						<li>Force (<a href="http://bl.ocks.org/4062045">example</a>)</li>
+						<li>Histogram (<a href="">example</a>)</li>
+						<li>Pack (<a href="http://bl.ocks.org/4063269">example</a>)</li>
+						<li>Partition (<a href="http://www.jasondavies.com/coffee-wheel/">example</a>)</li>
+						<li>Pie (<a href="http://bl.ocks.org/3887235">example</a>)</li>
+						<li>Stack (<a href="http://bl.ocks.org/3943967">example</a>)</li>
+						<li>Tree (<a href="http://bl.ocks.org/4063550">example</a>)</li>
+						<li>Treemap (<a href="http://bost.ocks.org/mike/treemap/">example</a>)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Example layout: Cluster</h2>
+					<img src="../img/cluster.jpg">
+					<p><a href="http://localhost/examples/cluster.htm">Live</a></p>
+				</section>
+
+				<section>
+					<h2>Geography</h2>
+					<p>Maps geographic data (GeoJSON) to SVG path data</p>
+					<p>Many, many different projections</p>
+					<p>(Mercator, Albers, Gringorten... <a href="https://github.com/mbostock/d3/wiki/Geo-Projections">many more</a>)</p>
+					<p><a href="http://localhost/examples/worldmap.html">Example</a>
+					</p>
+				</section>
+
+				<section>
+					<h2>Geometry</h2>
+					<ul>
+						<li>Voronoi tesselation</li>
+						<li>Quadtree</li>
+						<li>Hull</li>
+						<li>Polygon</li>
+					</ul>
+					<p></p>
+					<p><a href="https://github.com/mbostock/d3/wiki/Geometry">Documentation</a></p>
+				</section>
+
+				<section>
+					<h2>Behaviours</h2>
+					<ul>
+						<li>Drag</li>
+						<li>Zoom</li>
+					</ul>
+					<p></p>
+					<p><a href="https://github.com/mbostock/d3/wiki/Behaviors">Documentation</a></p>
+				</section>
+
+				<section>
+					<h1>Coding examples</h1>
+				</section>
+
+				<section>
+					<h2>Coding D3</h2>
+					<ul>
+						<li>Selections</li>
+						<li>Binding data</li>
+						<li>Styling</li>
+						<li>SVG</li>
+						<li>Events</li>
+						<li>Geography</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>THE END</h1>
+					<p>Peter Cook / @prcweb / www.prcweb.co.uk</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
