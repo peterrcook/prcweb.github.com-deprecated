@@ -122,7 +122,8 @@
       <script type="text/javascript">
         $('.rollover').on('click', function() {
           var link = $(this).find('h4 a')[0].href+'/click';
-          _gaq.push(['_trackPageView', link]);
+          console.log('click');
+          _gaq.push(['_trackPageView', '/click']);
         })
       </script>
 
