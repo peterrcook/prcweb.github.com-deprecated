@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+  <title>Cluster</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+.node {
+  font: 12px sans-serif;
+}
+</style>
+<body>
+  <svg width="900" height="900"></svg>
+</body>
+<script src="http://d3js.org/d3.v2.js?2.9.1"></script>
+<script>
+var svg = d3.select('svg').append('g').attr("transform", "translate(100,0)");
+
+d = {
+  'name':'Instruments',
+  'children': [
+    {
+    'name': 'Strung',
+  'children': [
+    {'name': 'Guitar'}, 
+    {'name': 'Violin'}
+  ]
+  },
+    {'name': 'Percussion',
+  'children': [
+    {'name': 'Drums'}, 
+    {'name': 'Marimba'},
+    {'name': 'Tambourine'}
+  ]
+  },
+  ]
+};
+
+var cluster = d3.layout.cluster().size([300,300]);
+
+/* nodes */
+var nodes = cluster.nodes(d);
+var node = svg.selectAll(".node")
+      .data(nodes)
+    .enter().append("g")
+      .attr("class", "node")
+      .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
+node.append('circle').attr('r', 4.5);
+
+/* links */
+var links = cluster.links(nodes)
+var diagonal = d3.svg.diagonal()
+    .projection(function(d) { return [d.y, d.x]; });
+var link = svg.selectAll(".link")
+      .data(links)
+    .enter().append("path")
+      .attr("class", "link")
+      .attr("d", diagonal);
+
+/* labels */
+node.append("text")
+      .attr("dx", function(d) { return d.children ? -8 : 8; })
+      .attr("dy", 3)
+      .style("text-anchor", function(d) { return d.children ? "end" : "start"; })
+      .text(function(d) { return d.name; });
+
+</script>

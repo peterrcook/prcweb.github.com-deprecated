@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>World map</title>
+<style>
+
+path {
+  fill: #ccc;
+  stroke: #fff;
+}
+
+#name {
+  position: absolute;
+  top: 165px;
+  left: 220px;
+  font-size: 120px;
+  opacity: 0;
+  -moz-user-select: none; 
+  -khtml-user-select: none; 
+  -webkit-user-select: none; 
+  -o-user-select: none;
+  z-index: -1;
+}
+
+</style>
+<body>
+  <svg width="960" height="500"></svg>
+  <div id="name"></div>
+</body>
+<script src="http://d3js.org/d3.v2.js?2.9.1"></script>
+<script>
+
+var projection = d3.geo.mercator();
+//var projection = d3.geo.azimuthal();
+var path = d3.geo.path().projection(projection);
+var features;
+var countryName = d3.select('#name');
+
+d3.json('world-countries.json', function(collection) {
+  features = collection.features;
+
+  d3.select('svg').selectAll('path')
+      .data(collection.features)
+    .enter().append('path')
+      .attr('d', path)
+      .on('click', click);
+
+});
+
+function click(d) {
+  var selected = d3.select(this);
+  var svg = this.parentNode;
+
+  //Revert to unzoomed
+  if(selected.classed('selected')) {
+    selected.classed('selected', false).transition().attr('transform', 'translate(0, 0) scale(1)').style('fill', '#ccc');
+    return;
+  }
+
+  //Zoom
+  var centroid = path.centroid(d);
+  var x = centroid[0], y = centroid[1];
+
+  //move element to end of SVG so that it's drawn last of all
+  svg.appendChild(this);
+
+  selected.classed('selected', true).transition().attr('transform', 'translate(-'+x+',-'+y+') scale(2)').style('fill', 'red');
+
+  countryName.style('z-index', 100).text(d.properties.name).transition().duration(400).style('opacity', 0.9).each('end', function() {
+    countryName.transition().duration(800).ease(d3.ease('quad')).style('opacity', 0).style('z-index', -1);
+  });
+}
+
+</script>
