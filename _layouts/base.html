@@ -117,6 +117,14 @@
       {{content}}
 
     </div>
+    <script src="/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+      $('.rollover').on('click', function() {
+        var link = $(this).find('h4 a')[0].href+'/click';
+        console.log('click');
+        _gaq.push(['_trackPageview', '#click']);
+      })
+    </script>
 
   </body>
 </html>
