@@ -6,6 +6,18 @@
 	    <link rel="stylesheet" href="css/style.css">
 	    <link rel="stylesheet" href="css/svg.css">
 		<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css">
+	    <script type="text/javascript">
+	      var _gaq = _gaq || [];
+	      _gaq.push(['_setAccount', 'UA-37639745-1']);
+	      _gaq.push(['_setDomainName', 'prcweb.co.uk']);
+	      _gaq.push(['_trackPageview']);
+
+	      (function() {
+	        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	      })();
+	    </script>
 	</head>
 
 	<body>
@@ -19,8 +31,8 @@
 			<pre><code>var chart = circularHeatChart()
     .innerRadius(20)
     .radialLabels(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"])
-    .segmentLabels(["Midnight", "1am", "2am", "3am", "4am", "5am", "6am", "7am", "8am", "9am", "10am", "11am",
-    "Midday", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "8pm", "9pm", "10pm", "11pm"]);
+    .segmentLabels(["Midnight", "1am", "2am", "3am", "4am", "5am", "6am", "7am", "8am", "9am", "10am", 
+    "11am", "Midday", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "8pm", "9pm", "10pm", "11pm"]);
 
 var energyData = [ 0.176042, 0.096146, 0.076414, ..more data.. , 0.192478, 0.134997, 0.152271 ];
 
@@ -78,8 +90,8 @@ var chart = circularHeatChart()
     .innerRadius(20)
     .range(["white", "steelblue"])
     .radialLabels(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"])
-    .segmentLabels(["Midnight", "1am", "2am", "3am", "4am", "5am", "6am", "7am", "8am", "9am", "10am", "11am",
-    "Midday", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "8pm", "9pm", "10pm", "11pm"]);
+    .segmentLabels(["Midnight", "1am", "2am", "3am", "4am", "5am", "6am", "7am", "8am", "9am", "10am",
+    "11am", "Midday", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "8pm", "9pm", "10pm", "11pm"]);
 
 d3.select('#chart3')
     .selectAll('svg')

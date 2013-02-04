@@ -2,6 +2,7 @@
 layout: post
 title: async visualisation
 permalink: async-visualisation
+description: Blog entry on visualising event attendence data using data visualisation library D3.js
 ---
 <h3>Visualising event attendance using D3.js</h3>
 
