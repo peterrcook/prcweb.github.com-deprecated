@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Circular Heat Chart Component for D3
-description: Blog entry on building a circular heat-chart reusable chart for D3.js
+description: Blog entry on building a circular heat-chart reusable component for D3.js
 ---
 <h3>Circular heat chart component for D3</h3>
 
