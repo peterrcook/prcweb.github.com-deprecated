@@ -23,9 +23,10 @@ d3.json('/lab/rainfall/data/rainfall.json', function(rainfallData) {
 
 	var chart = circularHeatChart()
 		.accessor(function(d) {return d.d;})
-		.segmentHeight(5)
+		.segmentHeight(4)
 		.innerRadius(20)
 		.numSegments(12)
+		.margin({top: 40, right: 20, bottom: 20, left: 130})
 		.domain([50, 200])
 		.range(['white', 'blue'])
 		.segmentLabels(months)
