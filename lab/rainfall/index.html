@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+	    <title>Monthly UK Rainfall 1910-2012</title>
+	    <link rel="stylesheet" href="css/style.css">
+	    <link rel="stylesheet" href="css/svg.css">
+	    <link rel="stylesheet" href="css/jquery-ui-1.10.0.custom.min.css">
+	</head>
+
+	<body>
+		<h1>Monthly UK Rainfall (1910-2012)</h1>
+		<div id="monthFilter"></div>
+		<div id="chart">
+			<svg>
+				<text class="label period" y="32"></text>
+				<text class="label rainfall" y="82"></text>
+				<text class="label rank" x="1100" y="22"></text>
+				<text class="label help" x="1100" y="40">- drag the slider to see which months had the greatest rainfall</text>
+				<text class="label help" x="1100" y="57">- hover over a month to find out its rainfall</text>
+			</svg>
+		</div>
+		<footer>
+			<p>Built with <a href="http://d3js.org">D3</a>. Chart development by <a href="http://prcweb.co.uk">Peter Cook</a>. Contains public sector information licensed under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/">Open Government Licence v1.0</a> (<a href="http://www.metoffice.gov.uk/climate/uk/datasets/#">view data source</a>).</p>
+		</footer>
+
+
+		<script src="http://d3js.org/d3.v3.min.js"></script> 
+		<script src="/lab/rainfall/js/circularHeatChart.js"></script>
+		<script src="/lab/rainfall/js/jquery-1.9.1.min.js"></script>
+		<script src="/lab/rainfall/js/jquery-ui-1.10.0.custom.min.js"></script>
+		<script src="/lab/rainfall/js/rainfall.js"></script>
+	</body>
+</html>
