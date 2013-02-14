@@ -6,7 +6,7 @@ comments: true
 ---
 ###Data visualisation of UK Temperature
 
-I recently produced a visualisation of UK rainfall over the past 100 years using data supplied by the Met Office and have now produced a similar chart for UK temperature.
+I recently produced a [visualisation of UK rainfall](/rainfall) over the past 100 years using data supplied by the Met Office and have now produced a similar chart for UK temperature.
 
 [![UK temperature circular heat chart](/img/uktemperature-vis.jpg)](/lab/uktemperature)
 
