@@ -1,0 +1,55 @@
+/* SVG styling */
+svg {
+	width: 1100px;
+	height: 920px;
+	font-family: helvetica, sans-serif;
+}
+
+path {
+	stroke: #777;
+	stroke-width: 0.1px;
+}
+
+g.circular-heat path.hidden {
+	opacity: 0.1;
+	pointer-events: none;
+}
+
+g.labels.segment {
+	font-size: 13px;
+	fill: #777;
+}
+g.labels.radial {
+	font-size: 12px;
+	letter-spacing: 0px;
+	fill: #777;
+	font-weight: normal;
+	-webkit-user-select: none; /* Chrome/Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+	cursor: default;
+}
+g.labels.hidden {
+	opacity: 0.1;
+}
+
+text.label {
+	font-size: 40px;
+	font-weight: bold;
+	fill: #bbb;
+}
+
+text.label.temperature {
+	font-size: 60px;
+	fill: #777;
+}
+text.label.rank {
+	font-size: 22px;
+	text-anchor: end;
+}
+text.label.help {
+	font-size: 14px;
+	font-weight: 100;
+	letter-spacing: -1px;
+	text-anchor: end;
+}
