@@ -5,7 +5,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Euro-debt</title>
   <link rel="stylesheet" href="assets/base.css">
-  <!-- <link href='http://fonts.googleapis.com/css?family=Skranji:400,700|Patrick+Hand+SC' rel='stylesheet' type='text/css'> -->
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37639745-1']);
+    _gaq.push(['_setDomainName', 'prcweb.co.uk']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
 </head>
 <body>
   <div id="container"></div>
@@ -19,7 +30,7 @@
 
   <div id="about">
     <p><strong>A visualisation of Europe's debt</strong> using animated arrows to show debt between countries. Each red circle is proportional in radius to that country's debt. <strong>Hover</strong> over a circle to show how much is owed to other countries (the width of the arrow is proportional to the amount owed).</p>
-    <p>This visualisation uses similar data to <a href="http://www.nytimes.com/interactive/2011/10/23/sunday-review/an-overview-of-the-euro-crisis.html">this overview from the NY Times</a> and <a href="http://bl.ocks.org/mbostock/1308257">this chord diagram</a>. Debt data is from <a href="https://gist.github.com/mbostock/1308257">here</a> whilst the world map data is taken from <a href="http://raphaeljs.com/world/">this Raphael example</a>. I do not know the original source of the debt data and cannot guarantee its veracity!</p>
+    <p>This visualisation uses similar data to <a href="http://www.nytimes.com/interactive/2011/10/23/sunday-review/an-overview-of-the-euro-crisis.html">this overview from the NY Times</a> and <a href="http://bl.ocks.org/mbostock/1308257">this chord diagram</a>. Debt data is from <a href="https://gist.github.com/mbostock/1308257">here</a> whilst the world map data is taken from <a href="http://raphaeljs.com/world/">this Raphael example</a>. I do not know the original source of the debt data and cannot guarantee its veracity! Original inspiration from <a href="http://resourcesfutures.org/#!/new-interdependencies">Resources Futures</a>.</p>
     <p>The visualisation you see here is built by <a href="http://prcweb.co.uk">Peter Cook</a> using <a href="http://raphaeljs.com">Raphael.js</a> with help from the <a href="https://github.com/premasagar/tim">Tim micro-templater</a>.</p>
   </div> 
 
