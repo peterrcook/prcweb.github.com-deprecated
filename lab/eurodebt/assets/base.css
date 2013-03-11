@@ -1,0 +1,46 @@
+#container {
+  width: 1200px;
+  height: 720px;
+  margin: 0 auto;
+  border: 1px solid #eee;
+}
+
+div#legend {
+  position: absolute;
+  left: 820px;
+  top: 420px;
+  font-family: helvetica, sans-serif;
+  font-size: 14px;
+  color: #808080;
+  font-weight: 100;
+  width: 250px;
+}
+
+#legend h1 {
+  font-size: 16px;
+}
+
+#legend h2 {
+  font-size: 14px;
+  margin: 0;
+}
+
+#legend table {
+  width: 100%;
+}
+
+tr:last-child {
+  font-weight: bold;
+}
+
+div#about {
+  position: absolute;
+  left: 820px;
+  top: 40px;
+  width: 380px;
+  font-family: helvetica, sans-serif;
+  font-size: 12px;
+  color: #808080;
+  font-weight: 100;
+  line-height: 140%;
+}
