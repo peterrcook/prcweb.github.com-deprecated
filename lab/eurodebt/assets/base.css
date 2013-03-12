@@ -3,11 +3,12 @@
   height: 720px;
   margin: 0 auto;
   border: 1px solid #eee;
+  position: relative;
 }
 
 div#legend {
   position: absolute;
-  left: 820px;
+  left: 760px;
   top: 420px;
   font-family: helvetica, sans-serif;
   font-size: 14px;
@@ -35,7 +36,7 @@ tr:last-child {
 
 div#about {
   position: absolute;
-  left: 820px;
+  left: 760px;
   top: 40px;
   width: 380px;
   font-family: helvetica, sans-serif;
