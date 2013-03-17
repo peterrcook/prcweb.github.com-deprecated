@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>World Map of Migration 2010</title>
+  <link rel="stylesheet" href="assets/base.css">
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37639745-1']);
+    _gaq.push(['_setDomainName', 'prcweb.co.uk']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</head>
+<body>
+  <div id="container">
+
+    <div id="legend">
+      <h1>World Migration 2010</h1>
+      <h2></h2>
+      <table class="content">
+      </table>
+    </div>
+
+    <div id="about">
+      <p><strong>A visualisation of world migration</strong> using animated arrows to show migration between countries. Each circle is proportional in radius to that country's emigrants (those leaving their country) or its immigrants (those settling in a new country).</p>
+      <p><strong>Hover</strong> over a circle to show the migrant flow. The width of the arrow is proportional to the number of migrants.</p>
+      <p>This visualisation is built by <a href="http://prcweb.co.uk">Peter Cook</a> using data from <a href="http://econ.worldbank.org/WBSITE/EXTERNAL/EXTDEC/EXTDECPROSPECTS/0,,contentMDK:22803131~pagePK:64165401~piPK:64165026~theSitePK:476883,00.html">The World Bank</a>. Built with <a href="http://raphaeljs.com">Raphael</a>, <a href="http://jquery.com">jQuery</a> and <a href="https://github.com/premasagar/tim">Tim</a>.</p>
+      <p><button id="emigrants" disabled="disabled">View emigration</button><button id="immigrants">View immigration</button></p>
+    </div> 
+
+    <div id="social">
+      <a href="https://twitter.com/prcweb" class="twitter-follow-button" data-show-count="false">Follow @prcweb</a>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-url="http://prcweb.co.uk/lab/worldmigration" data-text="Animated world map of migration ">Tweet</a>
+      <div class="fb-like" data-href="http://prcweb.co.uk/lab/worldmigration" data-send="false" data-layout="button_count" data-width="150" data-show-faces="false"></div>
+    </div>
+
+  </div>
+
+
+  <script type="text/tim" id="migration-row">
+    <tr><td>{{country}}</td><td>{{amount}}</td></tr>
+  </script>
+  <script src="js/raphael.js"></script>
+  <script src="js/jquery-1.9.1.js"></script>
+  <script src="js/tinytim.min.js"></script>
+<!--  <script src="js/pablo.js"></script>-->
+  <script src="js/world.js"></script>  
+  <script src="js/app-world.js?v3"></script>
+
+
+  <!-- Twitter -->
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  <!-- Facebook -->
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=220656758000337";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+#container {
+  width: 1400px;
+  height: 760px;
+  margin: 0 auto;
+  border: 1px solid #eee;
+  position: relative;
+}
+
+div#legend {
+  position: absolute;
+  left: 830px;
+  top: 390px;
+  font-family: helvetica, sans-serif;
+  font-size: 11px;
+  color: #808080;
+  font-weight: 100;
+  width: 200px;
+}
+
+#legend h1 {
+  font-size: 16px;
+}
+
+#legend h2 {
+  font-size: 14px;
+  margin: 0;
+}
+
+#legend table {
+  width: 100%;
+}
+
+tr:last-child {
+  font-weight: bold;
+}
+tr:last-child td {
+  border-top: 1px solid #ddd;
+}
+
+div#about {
+  position: absolute;
+  left: 160px;
+  top: 0;
+  width: 320px;
+  font-family: helvetica, sans-serif;
+  font-size: 12px;
+  color: #808080;
+  font-weight: 100;
+  line-height: 140%;
+}
+
+div#about button {
+  font-size: 12px;
+  padding: 7px;
+  cursor: pointer;
+}
+
+div#social {
+  position: absolute;
+  top: 10px;
+  left: 810px;
+  width: 300px;
+}
+
+.twitter-share-button[style], .twitter-follow-button[style] { vertical-align: text-bottom !important; }
+.twitter-share-button {width: 76px !important;}
