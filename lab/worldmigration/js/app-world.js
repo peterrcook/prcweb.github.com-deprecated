@@ -95,7 +95,7 @@
 
       origins.push({country: c, element: o});
     }
-    console.log(origins);
+    // console.log(origins);
   }
 
   function updateOrigins() {
