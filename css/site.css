@@ -58,6 +58,15 @@ div.content img {
   margin: 30px auto;
 }
 
+div.content h4 {
+  margin-top: 20px;
+}
+
+#svg-container {
+  height: 100px;
+}
+
 #disqus_thread {
   margin-top: 40px;
 }
+
