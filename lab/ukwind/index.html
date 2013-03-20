@@ -18,13 +18,31 @@
 			<p>The original inspiration came from the beautiful <a href="http://hint.fm/wind/" target="_blank">Wind Map</a> by hint.fm. Weather data is from the Met Office's <a href="http://www.metoffice.gov.uk/datapoint">DataPoint</a> service and the UK map was taken from Mike Bostock's <a href="http://bost.ocks.org/mike/map/">mapping tutorial</a>.</p>
 			<p>Although real data, this visualisation is just for demonstration.</p>
 			<p>Built by <a href="http://prcweb.co.uk">Peter Cook</a> using <a href="http://d3js.org">D3</a>. <a href="/making-the-uk-wind-chart">More</a> about this visualisation.</p>
-		</div>
 
+      <div id="social">
+        <a href="https://twitter.com/prcweb" class="twitter-follow-button" data-show-count="false">Follow @prcweb</a>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-url="http://prcweb.co.uk/lab/ukwind" data-text="Animated world map of migration ">Tweet</a>
+        <div class="fb-like" data-href="http://prcweb.co.uk/lab/ukwind" data-send="false" data-layout="button_count" data-width="150" data-show-faces="false"></div>
+      </div>
+		</div>
 
 		<script src="js/d3.v3.min.js"></script>
 		<script src="js/topojson.v0.min.js"></script>
 		<script src="js/jquery-1.9.1.min.js"></script>
 		<script src="data/21-03-13-12pm-truncated.js"></script>
 		<script src="js/main.js"></script>
+
+	  <!-- Twitter -->
+	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	  <!-- Facebook -->
+	  <div id="fb-root"></div>
+	  <script>(function(d, s, id) {
+	    var js, fjs = d.getElementsByTagName(s)[0];
+	    if (d.getElementById(id)) return;
+	    js = d.createElement(s); js.id = id;
+	    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=220656758000337";
+	    fjs.parentNode.insertBefore(js, fjs);
+	  }(document, 'script', 'facebook-jssdk'));</script>
 	</body>
 </html>

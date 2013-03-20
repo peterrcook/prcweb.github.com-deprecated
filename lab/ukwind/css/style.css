@@ -4,15 +4,15 @@ body {
 }
 
 #chart {
-	width: 500px;
-	margin: 0 auto;
+  width: 500px;
+  margin: 0 auto;
 }
 
 #about {
-	position: absolute;
-	top: 20px;
-	left: 40px;
-	width: 300px;
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  width: 300px;
   font-family: helvetica, sans-serif;
   font-size: 12px;
   /*color: #808080;*/
@@ -22,3 +22,6 @@ body {
 h1 {
   font-weight: 100;
 }
+
+.twitter-share-button[style], .twitter-follow-button[style] { vertical-align: text-bottom !important; }
+.twitter-share-button {width: 76px !important;}
