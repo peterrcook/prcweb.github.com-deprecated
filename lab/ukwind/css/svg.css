@@ -1,0 +1,9 @@
+/* SVG styling */
+path {
+	fill: #CED8B6;
+}
+
+line {
+	stroke: #555;
+	stroke-width: 2px;
+}

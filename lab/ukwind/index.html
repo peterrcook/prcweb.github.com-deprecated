@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+	    <title>UK Wind Chart</title>
+	    <link rel="stylesheet" href="css/style.css">
+	    <link rel="stylesheet" href="css/svg.css">
+	</head>
+
+	<body>
+		<div id="chart">
+		</div>
+
+		<div id="about">
+			<h1>Animated UK Wind Chart</h1>
+			<p>This chart shows wind speed and direction in the UK. The more the wind blows, the faster the lines go!</p>
+			<p>The original inspiration came from the beautiful <a href="http://hint.fm/wind/" target="_blank">Wind Map</a> by hint.fm. Weather data is from the Met Office's <a href="http://www.metoffice.gov.uk/datapoint">DataPoint</a> service and the UK map was taken from Mike Bostock's <a href="http://bost.ocks.org/mike/map/">mapping tutorial</a>.</p>
+			<p>Although real data, this visualisation is just for demonstration.</p>
+			<p>Built by <a href="http://prcweb.co.uk">Peter Cook</a> using <a href="http://d3js.org">D3</a>. <a href="/making-the-uk-wind-chart">More</a> about this visualisation.</p>
+		</div>
+
+
+		<script src="js/d3.v3.min.js"></script>
+		<script src="js/topojson.v0.min.js"></script>
+		<script src="js/jquery-1.9.1.min.js"></script>
+		<script src="data/21-03-13-12pm-truncated.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
