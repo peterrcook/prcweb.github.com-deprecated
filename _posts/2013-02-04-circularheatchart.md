@@ -37,7 +37,7 @@ d3.json('rainfall.json', function(rainfallData) {
 
     d3.select('#chart')
         .selectAll('svg')
-        .data([data])
+        .data([rainfallData])
         .enter()
         .append('svg')
         .call(chart);
