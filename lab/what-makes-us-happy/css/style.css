@@ -1,6 +1,6 @@
 /* Document styling */
 body {
-  background-color: #eee;
+  /*background-color: #eee;*/
   font-family: helvetica, sans-serif;
   font-weight: 100;
 }
@@ -13,7 +13,7 @@ body {
 
 #chart {
   position: absolute;
-  top: 50px;
+  top: 30px;
   left: 250px;
   width: 900px;
   /*margin: 25px auto;*/
@@ -25,11 +25,12 @@ body {
   left: 30px;
   font-size: 16px;
   letter-spacing: -2px;
+  line-height: 100%;
 }
 
 #about {
   position: absolute;
-  top: 320px;
+  top: 300px;
   left: 30px;
   width: 200px;
   font-size: 12px;
@@ -41,7 +42,7 @@ body {
 
 #menu {
   position: absolute;
-  top: 90px;
+  top: 65px;
   left: 30px;
   width: 300px;
 }

@@ -67,9 +67,9 @@ function getCorrelation(xArray, yArray) {
 
 d3.csv('data/summary.csv', function(data) {
 
-  var xAxis = 'GDP', yAxis = 'Overall';
+  var xAxis = 'GDP', yAxis = 'Well-being';
   var xAxisOptions = ["GDP", "Inequality", "Food consumption", "Alcohol consumption", "Energy consumption", "Family", "Working hours", "Work income", "Health spending", "Military spending"]
-  var yAxisOptions = ["Overall (personal)", "Overall (social)", "Overall"];
+  // var yAxisOptions = ["Well-being"];
   var descriptions = {
     "GDP" : "GDP per person (US$)",
     "Energy consumption" : "Residential electricity use (kWh per year per person)",
@@ -96,7 +96,7 @@ d3.csv('data/summary.csv', function(data) {
 
   svg.append('g')
     .classed('chart', true)
-    .attr('transform', 'translate(60, -60)');
+    .attr('transform', 'translate(80, -60)');
 
   // Build menus
   d3.select('#x-axis-menu')
@@ -114,20 +114,20 @@ d3.csv('data/summary.csv', function(data) {
       updateMenus();
     });
 
-  d3.select('#y-axis-menu')
-    .selectAll('li')
-    .data(yAxisOptions)
-    .enter()
-    .append('li')
-    .text(function(d) {return d;})
-    .classed('selected', function(d) {
-      return d === yAxis;
-    })
-    .on('click', function(d) {
-      yAxis = d;
-      updateChart();
-      updateMenus();
-    });
+  // d3.select('#y-axis-menu')
+  //   .selectAll('li')
+  //   .data(yAxisOptions)
+  //   .enter()
+  //   .append('li')
+  //   .text(function(d) {return d;})
+  //   .classed('selected', function(d) {
+  //     return d === yAxis;
+  //   })
+  //   .on('click', function(d) {
+  //     yAxis = d;
+  //     updateChart();
+  //     updateMenus();
+  //   });
 
   // Country name
   d3.select('svg g.chart')
@@ -145,6 +145,12 @@ d3.csv('data/summary.csv', function(data) {
     .append('text')
     .attr({'id': 'xLabel', 'x': 400, 'y': 670, 'text-anchor': 'middle'})
     .text(descriptions[xAxis]);
+
+  d3.select('svg g.chart')
+    .append('text')
+    .attr('transform', 'translate(-60, 330)rotate(-90)')
+    .attr({'id': 'yLabel', 'text-anchor': 'middle'})
+    .text('Well-being (scale of 0-10)');
 
   // Render points
   updateScales();
