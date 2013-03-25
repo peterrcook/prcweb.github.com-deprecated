@@ -1,0 +1,84 @@
+/* Document styling */
+body {
+  background-color: #eee;
+  font-family: helvetica, sans-serif;
+  font-weight: 100;
+}
+
+#wrapper {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#chart {
+  position: absolute;
+  top: 50px;
+  left: 250px;
+  width: 900px;
+  /*margin: 25px auto;*/
+}
+
+#title {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  font-size: 16px;
+  letter-spacing: -2px;
+}
+
+#about {
+  position: absolute;
+  top: 320px;
+  left: 30px;
+  width: 200px;
+  font-size: 12px;
+}
+
+#about .social {
+  margin-top: 5px;
+}
+
+#menu {
+  position: absolute;
+  top: 90px;
+  left: 30px;
+  width: 300px;
+}
+
+li, h1, h2 {
+  font-weight: 100;
+}
+
+h2 {
+  font-size: 11px;
+  margin: 0;
+  color: #666;
+}
+
+ul {
+  list-style: none;
+  font-size: 12px;
+  padding: 0;
+  margin-top: 3px;
+}
+
+li {
+  cursor: pointer;
+  padding-bottom: 5px;
+}
+
+li:hover {
+  color: #000;
+}
+
+li.preview {
+  font-weight: 400;
+}
+
+li.selected {
+  font-weight: bold;
+}
+
+.twitter-share-button[style], .twitter-follow-button[style] { vertical-align: text-bottom !important; }
+.twitter-share-button {width: 76px !important;}
