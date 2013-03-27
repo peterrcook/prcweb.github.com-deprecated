@@ -7,7 +7,7 @@
   // Origin elements
   var origins = [];
 
-  var amountScale = 0.000001;
+  var amountScale = 0.0000006;
   var threshold = 100000;
   var template = $('#migration-row').html();
   var mode = 'out';
@@ -71,8 +71,7 @@
 
   // From http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
   function numberWithCommas(x) {
-    return x;
-      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 
   // RENDERING
@@ -82,8 +81,10 @@
       var oXY = getXY(places[c]);
 
       var rad = 0;
-      if(total >= threshold)
-        rad = total * amountScale > 1 ? total * amountScale : 1;
+      if(total >= threshold) {
+        rad = 0.004 * Math.sqrt( total/ Math.PI );
+        rad = rad > 1 ? rad : 1;      
+      }
 
       var o = paper.
         circle(oXY.x, oXY.y, rad).
@@ -102,9 +103,12 @@
     for(var i = 0; i < origins.length; i++) {
       var c = origins[i].country;
       var total = mode === 'in' ? data[c].totalIn : data[c].totalOut;
+
       var rad = 0;
-      if(total >= threshold)
-        rad = total * amountScale > 1 ? total * amountScale : 1;
+      if(total >= threshold) {
+        rad = 0.004 * Math.sqrt( total/ Math.PI );
+        rad = rad > 1 ? rad : 1;      
+      }
 
       var currentRad = origins[i].element.attr('r');
 
@@ -117,8 +121,11 @@
   
 
   function updateLegend(country) {
-    var movement = mode === 'in' ? 'Entering' : 'Leaving';
-    $('#legend h2').html(movement + ' ' + country);
+    if(mode === 'in') {
+      $('#legend h2').html(country + "'s immigrants are originally from:");
+    } else {
+      $('#legend h2').html('Migrants from ' + country + ' have settled in:');
+    }
 
     var migrations = data[country][mode];
     var subtotal = 0;
@@ -137,7 +144,9 @@
     var other = total - subtotal;
 
     $table.append(tim(template, {country: 'Other', amount: numberWithCommas(other)}));
-    $table.append(tim(template, {country: 'Total', amount: numberWithCommas(total)}));
+
+    var totalTitle = mode === 'in' ? 'Total immigrants' : 'Total emigrants';
+    $table.append(tim(template, {country: totalTitle, amount: numberWithCommas(total)}));
   }
 
   function showCurves(country) {

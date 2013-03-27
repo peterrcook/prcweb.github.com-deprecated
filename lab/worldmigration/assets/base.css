@@ -9,7 +9,7 @@
 div#legend {
   position: absolute;
   left: 830px;
-  top: 390px;
+  top: 420px;
   font-family: helvetica, sans-serif;
   font-size: 11px;
   color: #808080;
@@ -23,11 +23,12 @@ div#legend {
 
 #legend h2 {
   font-size: 14px;
-  margin: 0;
+  margin: 1px;
 }
 
 #legend table {
   width: 100%;
+  border-spacing: 1px;
 }
 
 tr:last-child {
