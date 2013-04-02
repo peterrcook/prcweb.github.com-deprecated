@@ -68,12 +68,12 @@ function getCorrelation(xArray, yArray) {
 d3.csv('data/summary.csv', function(data) {
 
   var xAxis = 'GDP', yAxis = 'Well-being';
-  var xAxisOptions = ["GDP", "Inequality", "Food consumption", "Alcohol consumption", "Energy consumption", "Family", "Working hours", "Work income", "Health spending", "Military spending"]
+  var xAxisOptions = ["GDP", "Equality", "Food consumption", "Alcohol consumption", "Energy consumption", "Family", "Working hours", "Work income", "Health spending", "Military spending"]
   // var yAxisOptions = ["Well-being"];
   var descriptions = {
     "GDP" : "GDP per person (US$)",
     "Energy consumption" : "Residential electricity use (kWh per year per person)",
-    "Inequality" : "Inequality GINI index (0 = low inequality, 100 = high inequality)",
+    "Equality" : "Equality (based on GINI index) (0 = low equality, 100 = high equality)",
     "Work income" : "Hourly pay per person (US$)",
     "Food consumption": "Food supply (kCal per day per person)",
     "Family" : "Fertility (children per women)",
