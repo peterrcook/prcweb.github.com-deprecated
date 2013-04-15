@@ -22,6 +22,7 @@ div.showcase img {
 }
 
 div.showcase div.rollover {
+  display: none;
   position: absolute;
   padding: 10px;
   top: 0px;
