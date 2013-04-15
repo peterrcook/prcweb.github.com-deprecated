@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+	    <title>D3 Tree</title>
+	    <link rel="stylesheet" href="css/style.css">
+	    <link rel="stylesheet" href="css/svg.css">
+	</head>
+
+	<body>
+		<div id="chart">
+			<svg>
+			</svg>
+		</div>
+		<button class="regenerate">Regenerate</button>
+		<p>A tree implemented using D3. Structually this is a binary tree and each branch is generated algorithmically. Some randomness is incorporated making it look more like a real tree.</p>
+		<p>This piece blurs the distinction between generative art and data visualisation. Arguably this isn't a data visualisation because no external data is used. However, the code does generate data for each branch (start point, angle, length and parent) and binds this data to SVG line elements using D3.</p>
+		<p>Be sure to click <a href="#" class="regenerate">regenerate</a> to see how well the awesome D3 handles the transition!</p>
+		<p>Another nice feature is that when hovering over a branch the route back to the root is highlighted.</p>
+		<footer>
+			<p>Built by <a href="http://prcweb.co.uk">Peter Cook</a> using <a href="http://d3js.org">D3</a>.</p>
+			<div id="social">
+				<a href="https://twitter.com/prcweb" class="twitter-follow-button" data-show-count="false">Follow @prcweb</a>
+				<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-url="http://prcweb.co.uk/lab/d3-tree" data-text="Tree built with D3js ">Tweet</a>
+				<div class="fb-like" data-href="http://prcweb.co.uk/lab/d3-tree" data-send="false" data-layout="button_count" data-width="150" data-show-faces="false"></div>
+			</div>
+		</footer>
+
+		<script src="js/d3.v3.min.js"></script>
+		<script src="js/main.js"></script>
+
+
+	  <!-- Twitter -->
+	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	  <!-- Facebook -->
+	  <div id="fb-root"></div>
+	  <script>(function(d, s, id) {
+	    var js, fjs = d.getElementsByTagName(s)[0];
+	    if (d.getElementById(id)) return;
+	    js = d.createElement(s); js.id = id;
+	    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=220656758000337";
+	    fjs.parentNode.insertBefore(js, fjs);
+	  }(document, 'script', 'facebook-jssdk'));</script>
+	</body>
+</html>
