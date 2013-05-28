@@ -1,3 +1,6 @@
+/* D3 Tree */
+/* Copyright 2013 Peter Cook (@prcweb); Licensed MIT */
+
 // Tree configuration
 var branches = [];
 var seed = {i: 0, x: 420, y: 600, a: 0, l: 130, d:0}; // a = angle, l = length, d = depth
