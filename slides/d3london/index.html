@@ -54,7 +54,7 @@
 
 				<section>
 					<h2>Background</h2>
-					<p>Looking for a visualisation portfolio piece</p>
+					<!-- <p>Looking for a visualisation portfolio piece</p> -->
 					<p>Question: how many ways can a single dataset by visualised?</p>
 					<p>Data: Wimbledon 2012</p>
 				</section>
@@ -68,486 +68,218 @@
 				</section>
 
 				<section>
-					<h2>Process</h2>
-					<ul>
-						<li>Questions &amp; aims</li>
-						<li>Conceptual design</li>
-						<li>Data wrangling</li>
-						<li>Implementation</li>
-					</ul>
+					<section>
+						<h2>The Process</h2>
+						<!-- <ul> -->
+							<p>Questions &amp; aims</p>
+							<p>Design</p>
+							<p>Data wrangling</p>
+							<p>Implementation</p>
+						<!-- </ul> -->
+					</section>
+
+					<section>
+						<h2>Questions</h2>
+						<p>Who won?</p>
+						<p>What were the surprises?</p>
+						<p>Who were the heroes?</p>
+						<p>Surprise defeats?</p>
+						<p>What were the interesting matches?</p>
+						<p>etc.</p>
+					</section>
+
+					<section>
+						<h2>Exploration? Art?</h2>
+						<p>No message - just allow the user to explore.</p>
+					</section>
+
+					<section>
+						<h2>Design</h2>
+						<img src="img/notebook.jpg">
+						<p>Pencil &amp; paper</p>
+					</section>
+
+					<section>
+						<h2>Data wrangling</h2>
+						<p>node.js + Underscore.js</p>
+					</section>
+
+					<section>
+						<h2>Implementation</h2>
+						<p>D3 + HTML + SVG + CSS</p>
+						<p>Iterative</p>
+					</section>
 				</section>
 
 				<section>
-					<h2>Questions</h2>
-					<p>Who won?</p>
-					<p>What were the surprises?</p>
-					<p>Who were the heroes?</p>
-					<p>Surprise defeats?</p>
-					<p>What were the interesting matches?</p>
-					<p>etc.</p>
-				</section>
-
-				<section>
-					<h2>Exploration? Art?</h2>
-					<p>No message - just allow the user to explore.</p>
-				</section>
-
-				<section>
-					<h2>Broadly speaking...</h2>
+					<h2>10 Visualisations</h2>
 					<h4>Overviews (for exploration)</h4>
 						<p>Match overview</p>
 						<p>Player overview</p>
 						<p>Hybrid?</p>
 					<h4>Heroes/losers</h4>
 					<h4>Interesting matches</h4>
+					<p>___</p>
+					<p><a href="http://wimbledon.prcweb.co.uk">wimbledon.prcweb.co.uk</a></p>
 				</section>
 
 
 				<section>
-					<h1>Overviews</h1>
+					<section>
+						<h2>Overviews</h2>
+						<a href="http://wimbledon.prcweb.co.uk/matchtree.html"><img src="img/matchtree.jpg" width="220"></a>
+						<a href="http://wimbledon.prcweb.co.uk/matchtable.html"><img src="img/matchtable.jpg" width="220"></a>
+						<a href="http://wimbledon.prcweb.co.uk/top32.html"><img src="img/playerbars.jpg" width="220"></a>
+						<a href="http://wimbledon.prcweb.co.uk/playergrid.html"><img src="img/playergrid.jpg" width="220"></a>
+						<a href="http://wimbledon.prcweb.co.uk/whoplayedwhom.html"><img src="img/matcharrows.jpg" width="220"></a>
+						<a href="http://wimbledon.prcweb.co.uk/playerbubbles.html"><img src="img/playerbubbles.jpg" width="220"></a>
+					</section>
+
+					<section>
+						<h2>Circular Match Tree</h2>
+						<a href="http://wimbledon.prcweb.co.uk/matchtree.html"><img src="img/matchtree.jpg"></a>
+						<p>Tournament is a tree structure</p>
+						<p>Circle more space efficient than triangle</p>
+						<p>D3 partition layout</p>
+					</section>
+					<section>
+						<h2>Match Table</h2>
+						<a href="http://wimbledon.prcweb.co.uk/matchtable.html"><img src="img/matchtable.jpg"></a>
+						<p>D3 + HTML/CSS (no SVG)</p>
+						<p>Surprisingly usable</p>
+					</section>
+
+					<section>
+						<h2>Top 32 Players</h2>
+						<a href="http://wimbledon.prcweb.co.uk/top32.html"><img src="img/playerbars.jpg"></a>
+						<p>D3 + HTML/CSS (no SVG)</p>
+						<p>Transitions</p>
+						<p>Only shows top 32 due to space!</p>
+					</section>
+					<section>
+						<h2>Player Grid</h2>
+						<a href="http://wimbledon.prcweb.co.uk/playergrid.html"><img src="img/playergrid.jpg"></a>
+						<p>D3 + HTML/CSS (no SVG)</p>
+						<p>Sortable</p>
+						<p>Interaction</p>
+						<p>Shows all players in one screen</p>
+					</section>
+
+					<section>
+						<h2>Who Played Whom?</h2>
+						<a href="http://wimbledon.prcweb.co.uk/whoplayedwhom.html"><img src="img/matcharrows.jpg"></a>
+						<p>Graph -> force directed?</p>
+						<p>SVG: paths (arcs)</p>
+					</section>
+
+					<section>
+						<h2>Player Bubbles</h2><h2>(Who Defeated Whom?)</h2>
+						<a href="http://wimbledon.prcweb.co.uk/playerbubbles.html"><img src="img/playerbubbles.jpg"></a>
+						<p>Another tree structure</p>
+						<p>Node = player &amp; children = defeated players</p>
+						<p>D3 <a href="https://github.com/mbostock/d3/wiki/Pack-Layout">pack layout</a></p>
+					</section>
 				</section>
 
 				<section>
-					<h2>Circular match tree</h2>
-					<a href="http://wimbledon.prcweb.co.uk/matchtree.html"><img src="img/matchtree.jpg"></a>
-					<p>Tournament is a tree structure</p>
-					<p>Circle more space efficient than triangle</p>
-					<p>D3 partition layout</p>
-				</section>
-				<section>
-					<h2>Match table</h2>
-					<a href="http://wimbledon.prcweb.co.uk/matchtable.html"><img src="img/matchtable.jpg"></a>
-					<p>D3 + HTML/CSS (no SVG)</p>
-					<p>Surprisingly usable</p>
+					<section>
+						<h2>Heroes</h2>
+						<a href="http://wimbledon.prcweb.co.uk/scatter.html"><img src="img/scatter.jpg" width="220"></a>
+						<a href="http://wimbledon.prcweb.co.uk/heroes.html"><img src="img/heroes.jpg" width="220"></a>
+						<a href="http://wimbledon.prcweb.co.uk/davidgoliath.html"><img src="img/davidgoliath.jpg" width="220"></a>
+					</section>
+
+					<section>
+						<h2>Scatter-plot</h2>
+						<a href="http://wimbledon.prcweb.co.uk/scatter.html"><img src="img/scatter.jpg"></a>
+						<p>Games won vs. ATP points</p>
+						<p>We expect games won to increase with ATP points</p>
+						<p>Outliers are heroes or losers</p>
+					</section>
+
+					<section>
+						<h2>Heroes</h2>
+						<a href="http://wimbledon.prcweb.co.uk/heroes.html"><img src="img/heroes.jpg"></a>
+						<p>Hero score = sum of point differences (of unexpected win)</p>
+						<p>Simple bar chart - div elements</p>
+					</section>
+
+					<section>
+						<h2>David &amp; Goliath</h2>
+						<a href="http://wimbledon.prcweb.co.uk/davidgoliath.html"><img src="img/davidgoliath.jpg"></a>
+						<p>Graph structure</p>
+						<p>Matches where winner defeated player of higher rank</p>
+						<p>D3 force-directed layout</p>
+					</section>
 				</section>
 
 				<section>
-					<h2>Player bars</h2>
-					<a href="http://wimbledon.prcweb.co.uk/top32.html"><img src="img/playerbars.jpg"></a>
-					<p>D3 + HTML/CSS (no SVG)</p>
-					<p>Transitions</p>
-					<p>Only shows top 32 due to space!</p>
-				</section>
-				<section>
-					<h2>Player grid</h2>
-					<a href="http://wimbledon.prcweb.co.uk/playergrid.html"><img src="img/playergrid.jpg"></a>
-					<p>D3 + HTML/CSS (no SVG)</p>
-					<p>Sortable</p>
-					<p>Interaction</p>
-					<p>Shows all players in one screen</p>
+					<section>
+						<h2>Interesting matches</h2>
+						<a href="http://wimbledon.prcweb.co.uk/matchswings.html"><img src="img/matchswings.jpg" width="220"></a>
+					</section>
+
+					<section>
+						<h2>Match swings</h2>
+						<a href="http://wimbledon.prcweb.co.uk/matchswings.html"><img src="img/matchswings.jpg"></a>
+						<p>For each match, show the game differences</p>
+						<p>Sort by 'swinginess'</p>
+						<p>D3 + HTML/CSS (no SVG)</p>
+					</section>
 				</section>
 
 				<section>
-					<h2>Who played whom?</h2>
-					<a href="http://wimbledon.prcweb.co.uk/whoplayedwhom.html"><img src="img/matcharrows.jpg"></a>
-					<p>Graph -> force directed?</p>
-					<p>SVG: paths (arcs)</p>
+					<section>
+						<h2>The process</h2>
+						<p>Design</p>
+						<p>Data wrangling</p>
+						<p>Implementation</p>
+					</section>
+
+					<section>
+ 						<h2>Design</h2>
+ 						<p>Pencil &amp; paper + in browser design (no Illustrator/Photoshop)</p>
+ 						<p>Iterative process: design, implement, design etc.</p>
+ 					</section>
+
+					<section>
+						<h2>Data wrangling</h2>
+						<p>node.js + Underscore.js</p>
+						<p>5 sets of json (matches, players, matchtree, winstree, herograph)</p>
+<!-- 						<ul>
+							<li>matches.json - array of matches</li>
+							<li>players.json - array of players</li>
+							<li>matchtree.json - tree of players (children = players of previous round)</li>
+							<li>winstree.json - tree of players (children = defeated players)</li>
+							<li>herograph.json - graph (nodes = players, edges = matches)</li>
+						</ul>
+ -->					</section>
+
+ 					<section>
+ 						<h2>Implementation</h2>
+						<p>D3/HTML/CSS/SVG in fairly equal measure</p>
+						<!-- <p>D3 incredible - stays out of the way</p> -->
+						<p>Main uses of D3: binding data to HTML/SVG elements, binding events, selection, layouts</p>
+						<p>Nothing out of the ordinary</p>
+					</section>
 				</section>
 
-				<section>
-					<h2>Player bubbles</h2><h2>(Who defeated Whom?)</h2>
-					<a href="http://wimbledon.prcweb.co.uk/playerbubbles.html"><img src="img/playerbubbles.jpg"></a>
-					<p>Another tree structure</p>
-					<p>Node = player &amp; children = defeated players</p>
-					<p>D3 <a href="https://github.com/mbostock/d3/wiki/Pack-Layout">pack layout</a></p>
-				</section>
-
-				<section>
-					<h1>Heroes</h1>
-				</section>
-
-				<section>
-					<h2>Scatter-plot</h2>
-					<a href="http://wimbledon.prcweb.co.uk/scatter.html"><img src="img/scatter.jpg"></a>
-					<p>Games won vs. ATP points</p>
-					<p>We expect games won to increase with ATP points</p>
-					<p>Outliers are heroes or losers</p>
-				</section>
-
-				<section>
-					<h2>Heroes</h2>
-					<a href="http://wimbledon.prcweb.co.uk/heroes.html"><img src="img/heroes.jpg"></a>
-					<p>Hero score = sum of point differences (of unexpected win)</p>
-					<p>Simple bar chart - div elements</p>
-				</section>
-
-				<section>
-					<h2>David &amp; Goliath</h2>
-					<a href="http://wimbledon.prcweb.co.uk/davidgoliath.html"><img src="img/davidgoliath.jpg"></a>
-					<p>Graph structure</p>
-					<p>Matches where winner defeated player of higher rank</p>
-					<p>D3 force-directed layout</p>
-				</section>
-
-				<section>
-					<h1>Interesting matches</h1>
-				</section>
-
-				<section>
-					<h2>Match swings</h2>
-					<a href="http://wimbledon.prcweb.co.uk/matchswings.html"><img src="img/matchswings.jpg"></a>
-					<p>For each match, show the game differences</p>
-					<p>Sort by 'swinginess'</p>
-					<p>D3 + HTML/CSS (no SVG)</p>
-				</section>
-
-				<section>
-					<h2>Implementation</h2>
-					<p>Data wrangling</p>
-					<p>D3/HTML/SVG/CSS in fairly equal measure</p>
-					<p>Iterative design</p>
-				</section>
-
-				<section>
-					<h2>Data wrangling</h2>
-					<p>Node + underscore</p>
-					<p>5 sets of json</p>
-				</section>
-
-				<section>
-					<h2>Other points</h2>
-					<p>D3 incredible - stays out of the way</p>
-					<p>Split of effort between wrangling/design/D3/HTML/CSS/SVG</p>
-					<p>Iterative process: design - implementation</p>
-					<p>No illustrator/photoshop - pencil &amp; paper</p>
+ 				<section>
+ 					<h2>Summing up</h2>
+ 					<p>How many ways can a single dataset be visualised? At least 10!</p>
+ 					<p>Start with questions</p>
+ 					<p>Consider exploratory visualisations too</p>
+ 					<p>Iterative design</p>
 					<p>Setting a challenge results in creativity</p>
-				</section>
-
-
-				<section>
-					<h2>Pie chart</h2>
-					<img src="img/1346410.jpg">
-					<p>Layouts, transitions</p>
-					<p><a href="http://bl.ocks.org/1346410">Live example</a></p>					
-				</section>
+ 				</section>
 
 				<section>
-					<h2>Custom charting</h2>
-					<img src="img/energy_doughnut.jpg">
-					<p>Energy data bound to SVG elements, events</p>
-					<p><a href="/lab/energy/">Live example</a></p>					
-				</section>
-
-				<section>
-					<h2>World map</h2>
-					<img src="img/worldmap.jpg">
-					<p>GeoJSON, projection, events</p>
-					<p><a href="/lab/worldmap">Live example</a></p>					
-				</section>
-
-				<section>
-					<h2>GOV.UK analytics</h2>
-					<img src="img/govuk.jpg">
-					<p><a href="http://digital.cabinetoffice.gov.uk/2012/11/12/updating-performance-dashboard/">About</a></p>
-					<p><a href="https://www.gov.uk/performance/dashboard">Live example</a></p>					
-				</section>
-
-				<section>
-					<h2>New York Times</h2>
-					<img src="img/nytimes-shift.jpg">
-					<p>SVG, paths, interaction</p>
-					<p><a href="http://www.nytimes.com/interactive/2012/10/15/us/politics/swing-history.html">Live example</a></p>					
-				</section>
-
-				<section>
-					<h2>Loads of examples</h2>
-					<ul>
-						<li><a href="https://github.com/mbostock/d3/wiki/Gallery">github.com/mbostock/d3/wiki/Gallery</a></li>
-						<li><a href="http://bl.ocks.org/mbostock">bl.ocks.org/mbostock</a></li>
-						<li><a href="http://www.jasondavies.com/">www.jasondavies.com/</a></li>
-						<li>#d3js</li>
-					</ul>
-				</section>
-
-				<section>
-					<h1>Why D3?</h1>
-				</section>
-
-				<section>
-					<h2>Other libraries</h2>
-					<ul>
-						<li>Highcharts (SVG, high-level, <a href="http://www.highcharts.com/demo/">examples</a>)
-						<li>InfoVis (Canvas, <a href="http://philogb.github.com/jit/demos.html">examples</a>)</li>
-						<li>Processing.js (Canvas, drawing, <a href="http://processingjs.org/exhibition/">examples</a>)</li>
-						<li>Raphael.js (SVG library, low-level, <a href="http://raphaeljs.com/">examples</a>)</li>
-						<li>Many others</li>
-				</section>
-
-				<section>
-					<h2>D3</h2>
-					<h3>'Data-Driven Documents'</h3>
-					<ul>
-						<li>Bind data to DOM elements</li>
-						<li>Create/remove/transform DOM elements</li>
-						<li>&lt;p&gt;, &lt;td&gt;, &lt;rect&gt;, &lt;line&gt;, &lt;path&gt; etc.</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Why use the DOM?</h2>
-					<ul>
-						<li>Styling (CSS)</li>
-						<li>Interaction (events)</li>
-						<li>Flexibility (anything that can be represented using HTML, CSS &amp; SVG can be made with D3)</li>
-						<li>Debugging (Chrome Developer Tools, Firebug)</li>
-						<li>Familiarity (most web developers familiar with the DOM)</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Reasons not to choose D3</h2>
-					<ul>
-						<li>Learning curve</li>
-						<li>Requires SVG for non-trivial graphical visualisations</li> 
-					</ul>
-				</section>
-
-				<section>
-					<h2>Browser support</h2>
-					<ul>
-						<li>Modern browsers</li>
-						<li>D3 is <a href="https://github.com/mbostock/d3/wiki">tested</a> against Firefox, Chrome (Chromium), Safari (WebKit), Opera and IE9</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Other &lsquo;Why D3&rsquo; resources</h2>
-					<ul>
-						<li>D3 <a href="http://d3js.org/">website</a></li>
-						<li>D3: Data-Driven Documents <a href="http://vis.stanford.edu/papers/d3">paper</a></li>
-					</ul>
-				</section>
-
-				<section>
-					<h1>Overview of D3</h1>
-				</section>
-
-				<section>
-					<h2>Modules</h2>
-					<ul>
-						<li>Core (selections, transitions, requests etc.)</li>
-						<li>Scales (map input to output)</li>
-						<li>SVG (generate SVG)</li>
-						<li>Time (time formatting, math)</li>
-						<li>Layouts (chord, cluster, force, hierarchy etc.)</li>
-						<li>Geography (geography, projections)</li>
-						<li>Geometry (Voronoi, quadtree, polygon, hull)</li>
-						<li>Behaviour (drag, zoom)</li>
-					</ul>
-					<p></p>
-					<p><a href="https://github.com/mbostock/d3/wiki/API-Reference">Documentation</a></p>
-				</section>
-
-				<section>
-					<h2>Core - selections</h2>
-					<p>Similar to, but not the same as, jQuery</p>
-					<pre><code>
-/* jQuery */
-$('td'); //Returns array (wrapped set) of elements
-
-/* D3 */
-d3.select('table'); //Returns array of arrays [[&lt;table&gt;]] 
-d3.selectAll('td'); //[[&lt;td&gt;, &lt;td&gt;, &lt;td&gt;, &lt;td&gt;]]
-d3.selectAll('tr').selectAll('td'); //[[&lt;td&gt;, &lt;td&gt;], [&lt;td&gt;, &lt;td&gt;]]
-
-d3.selectAll('td').text('Some data');
-					</code></pre>
-					<p><a href="https://github.com/mbostock/d3/wiki/Selections">Documentation</a></p>
-				</section>
-
-				<section>
-					<h2>Core - selections</h2>
-					<h3>Data binding</h3>
-					<pre><code>
-/* Data */
-var d = [6, 1, 4, 2, 5];
-
-/* Selection */
-var selection = d3.selectAll('li');
-
-/* Bind data to elements */
-var updateSelection = selection.data(d);
-updateSelection[0][0].__data__; // 6
-updateSelection.text(function(d) {return d;});
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Core - other</h2>
-					<pre><code>
-/* Transitions */
-d3.select('p').transition().style('font-size', '40px')
-
-/* Arrays */
-a = [4, 1, 2, 6, 10]
-d3.extent(a) //returns [1, 10]
-d3.permute(['a', 'b', 'c'], [1, 2, 0]) //returns ['b', 'c', 'a']
-
-/* Requests - similar to jQuery.get() etc. */
-
-/* Formatting */
-var zero = d3.format("04d")
-zero(2) // returns '0002'
-
-/* Colours */
-var red = d3.rgb('red')
-red.r // 255
-red.g // 0
-var darkerRed = red.darker()
-darker.r // 178
-d3.select('p').style('color', darkerRed)
-					</code></pre>
-					<p><a href="https://github.com/mbostock/d3/wiki/Core">Documentation</a></p>
-				</section>
-
-				<section>
-					<h2>Scales</h2>
-					<p>Scales are functions that map from an input domain to an output range</p>
-					<pre><code>
-var s = d3.scale.linear().domain([0, 1]).range([-10, 10])
-s(0) // -10
-s(0.5) // 0
-
-var cs = d3.scale.linear().domain([0, 1]).range(['white', 'red'])
-cs(0) // '#ffffff'
-cs(1) // '#ff0000'
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>SVG</h2>
-					<p>Add SVG elements like any other element</p>
-					<pre><code>
-d3.select('svg').append('circle')
-	.attr('cx', 40).attr('cy', 40).attr('r', 40)
-	.style('fill', 'red');
-					</pre></code>
-					<p>...or use an SVG generator to generate path data</p>
-					<pre><code>
-/* Create SVG path data generator */
-var line = d3.svg.line()
-    .x(function(d) { return d.x; })
-    .y(function(d) { return d.y; });
-
-/* Data */
-var d = [{x: 10, y:10}, {x:20, y:30}, {x:30, y:20}];
-
-/* Generate path data */
-line(d); // "M10,10L20,30L30,20"
-line.interpolate('basis');
-pathData = line(d); // "M10,10C10,10,10,10,11.666,13.333C13.333..."
-
-/* Add to the DOM */
-d3.select('svg').append('path').attr('d', pathData);
-
-//Other generators include arc, symbol, chord, diagonal
-					</pre></code>
-				</section>
-
-				<section>
-					<h2>SVG ctd.</h2>
-					<ul>
-						<li>Axes (for generating axes in SVG)</li>
-						<li>Controls (for drawing selection areas)</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Time</h2>
-					<pre><code>
-/* Time scales */
-first = new Date('1 Jan 2013');
-last = new Date('31 Dec 2013');
-
-var ts = d3.time.scale().domain([first, last]).range([0,1]);
-
-ts(new Date('10 Jan 2013')); // 0.0247
-
-/* Time intervals */
-d3.time.week(new Date('4 Jan 2013')); // Sun Dec 30 2012 00:00:00
-
-/* Counting */
-d3.time.dayOfYear('10 Jan 2013'); // 9
-					</pre></code>
-				</section>
-
-				<section>
-					<h2>Layouts</h2>
-					<ul>
-						<li>Bundle (<a href="http://bl.ocks.org/1044242">example</a>)</li>
-						<li>Chord (<a href="http://bl.ocks.org/1046712">example</a>)</li>
-						<li>Cluster (<a href="http://bl.ocks.org/4063570">example</a>)</li>
-						<li>Force (<a href="http://bl.ocks.org/4062045">example</a>)</li>
-						<li>Histogram (<a href="">example</a>)</li>
-						<li>Pack (<a href="http://bl.ocks.org/4063269">example</a>)</li>
-						<li>Partition (<a href="http://www.jasondavies.com/coffee-wheel/">example</a>)</li>
-						<li>Pie (<a href="http://bl.ocks.org/3887235">example</a>)</li>
-						<li>Stack (<a href="http://bl.ocks.org/3943967">example</a>)</li>
-						<li>Tree (<a href="http://bl.ocks.org/4063550">example</a>)</li>
-						<li>Treemap (<a href="http://bost.ocks.org/mike/treemap/">example</a>)</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Example layout: Cluster</h2>
-					<img src="img/cluster.jpg">
-					<p><a href="/lab/cluster">Live</a></p>
-				</section>
-
-				<section>
-					<h2>Geography</h2>
-					<p>Maps geographic data (GeoJSON) to SVG path data</p>
-					<p>Many, many different projections</p>
-					<p>(Mercator, Albers, Gringorten... <a href="https://github.com/mbostock/d3/wiki/Geo-Projections">many more</a>)</p>
-					<p><a href="/lab/worldmap/">Example</a>
-					</p>
-				</section>
-
-				<section>
-					<h2>Geometry</h2>
-					<ul>
-						<li>Voronoi tesselation</li>
-						<li>Quadtree</li>
-						<li>Hull</li>
-						<li>Polygon</li>
-					</ul>
-					<p></p>
-					<p><a href="https://github.com/mbostock/d3/wiki/Geometry">Documentation</a></p>
-				</section>
-
-				<section>
-					<h2>Behaviours</h2>
-					<ul>
-						<li>Drag</li>
-						<li>Zoom</li>
-					</ul>
-					<p></p>
-					<p><a href="https://github.com/mbostock/d3/wiki/Behaviors">Documentation</a></p>
-				</section>
-
-				<section>
-					<h1>Coding examples</h1>
-				</section>
-
-				<section>
-					<h2>Coding D3</h2>
-					<ul>
-						<li>Selections</li>
-						<li>Binding data</li>
-						<li>Styling</li>
-						<li>SVG</li>
-						<li>Events</li>
-						<li>Geography</li>
-					</ul>
-				</section>
-
-				<section>
-					<h3>D3 workshop - Brighton</h3>
-				</section>
-
-				<section>
-					<h1>THE END</h1>
-					<p>Peter Cook / @prcweb / www.prcweb.co.uk</p**>
+					<h2>The End</h2>
+					<p>Peter Cook / @prcweb / <a href="http://prcweb.co.uk">prcweb.co.uk</a></p>
+					<p>___</p>
+					<p>One day beginner's D3 workshop in Brighton 3rd July 2013</p>
+					<p><a href="http://l4rp.com/d3">l4rp.com/d3</a></p>
+					<p>(also on 25th September 2013)</p>
 				</section>
 
 			</div>
