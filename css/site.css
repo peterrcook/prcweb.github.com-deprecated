@@ -3,6 +3,12 @@ body {
   padding-bottom: 40px;
 }
 
+/* heading */
+h3.muted a {
+  text-decoration: none;
+  color: #999;
+}
+
 /* Custom container */
 .container-narrow {
   margin: 0 auto;
