@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+			<title>Two Tables | Understanding D3 Selections</title>
+	    <link rel="stylesheet" href="css/selection.css">
+	</head>
+
+	<body>
+		<div id="sidebar">
+			<h1>Two tables</h1>
+			<h2>Understanding D3 selections</h2>
+			<p>Below are two HTML tables. Each table contains row (tr) elements and each row contains data (td) elements.</p>
+			<p>Examples of selecting the tables using <a href="http://d3js.org">D3</a>'s .select() and .selectAll() are shown to the right.</p>
+			<p>
+			<div id="doc">
+				<table>
+					<tr>
+						<td>1</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>4</td>
+					</tr>
+				</table>
+
+				<table>
+					<tr>
+						<td>a</td>
+						<td>b</td>
+						<td>c</td>
+					</tr>
+					<tr>
+						<td>d</td>
+						<td>e</td>
+						<td>f</td>
+					</tr>
+					<tr>
+						<td>g</td>
+						<td>h</td>
+						<td>i</td>
+					</tr>
+				</table>
+			</div>
+			<p>.select() and .selectAll() return <em>arrays of arrays</em> of DOM elements.</p>
+			<p>The elements of the latest .selectAll() are grouped according to its preceding select. Each group has a parentNode (the element of the preceding select).</p>
+			<p>If there isn't a preceding select, d3.select('html') is implied.</p>
+			<p><a href="http://prcweb.co.uk">Peter Cook</a> June 2013</p>
+		</div>
+
+		<div id="main">
+			<div class="selections">
+			</div>
+		</div>
+
+		<script src="js/d3.v3.js"></script>
+		<script src="js/selection.js"></script>
+	</body>
+</html>

@@ -1,0 +1,108 @@
+/* Document styling */
+body {
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	width: 1200px;
+	margin: 0 auto;
+	font-size: 14px;
+}
+
+h1, h2 {
+	margin: 0;
+	/*font-weight: 400;*/
+}
+
+h1 {
+	font-size: 32px;
+	color: #333;
+	line-height: 95%;
+}
+
+h2 {
+	font-weight: 200;
+	font-size: 17px;
+	color: #333;
+}
+
+#sidebar {
+	width: 260px;
+	position: fixed;
+	top: 0;
+	margin: 40px 0;
+}
+
+#sidebar p {
+	clear: left;
+}
+
+#doc {
+	width: 250px;
+}
+
+#main {
+	position: relative;
+	left: 320px;
+	width: 800px;
+	margin: 40px 0;
+}
+table {
+	font-weight: 100;
+	font-size: 30px;
+	margin: 20px;
+	background-color: #eee;
+	display: inline-block;
+	border-collapse: collapse;
+}
+
+td {
+	padding: 8px;
+}
+
+.bracket {
+	display: inline-block;
+	font-weight: 100;
+}
+
+.outer.bracket {
+	font-size: 38px;
+}
+
+.selection {
+	margin-top: 40px;
+	font-size: 20px;
+	clear: left;
+	color: #444;
+	font-weight: 200;
+}
+
+.selection .name {
+	color: #666;
+	font-weight: 200;
+	font-size: 16px;
+	margin-bottom: 2px;
+	border-bottom: 1px dotted #ddd;
+	padding-bottom: 4px;
+	cursor: pointer;
+}
+
+div.group {
+	display: inline-block;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+div.group.first {
+	margin-left: 10px;
+}
+
+div.group .parent-node {
+	font-size: 10px;
+}
+
+table.hover, tr.hover, td.hover, span.hover, .parent-node.hover, div.selection .name.hover {
+	background-color: steelblue;
+	color: white;
+}
+
+#doc.hover {
+	background-color: steelblue;
+}
