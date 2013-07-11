@@ -29,14 +29,14 @@ a {
 }
 
 .foot {
-	margin-top: 40px;
+	margin-top: 20px;
 }
 
 #sidebar {
 	width: 260px;
 	position: fixed;
 	top: 0;
-	margin: 40px 0;
+	margin: 20px 0;
 	color: #333;
 }
 
@@ -52,7 +52,7 @@ a {
 	position: relative;
 	left: 320px;
 	width: 800px;
-	margin: 40px 0;
+	margin: 20px 0;
 }
 table {
 	font-weight: 100;
@@ -77,7 +77,7 @@ td {
 }
 
 .selection {
-	margin-top: 40px;
+	margin-top: 20px;
 	font-size: 20px;
 	clear: left;
 	color: #444;
