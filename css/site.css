@@ -9,6 +9,7 @@ h3.muted a {
   color: #999;
 }
 
+
 /* Custom container */
 .container-narrow {
   margin: 0 auto;
@@ -65,7 +66,7 @@ div.content img {
   margin: 30px auto;
 }
 
-div.content h4 {
+div.content h4, div.content h5 {
   margin-top: 20px;
 }
 
