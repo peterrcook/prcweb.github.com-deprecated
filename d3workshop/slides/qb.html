@@ -1,0 +1,600 @@
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Building Data Visualisations with D3</title>
+
+		<meta name="description" content="Building Data Visualisations with D3">
+		<meta name="author" content="Peter Cook">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h2>Building Data Visualisations with D3</h2>
+					<h3>@ QuantumBlack</h3>
+					<h3>August 2013</h3>
+					<p>
+						<small>by <a href="http://prcweb.co.uk">Peter Cook</a> / <a href="http://twitter.com/prcweb">@prcweb</a> / <a href="http://www.prcweb.co.uk">www.prcweb.co.uk</a></small>
+					</p>
+				</section>
+
+<!-- 				<section>
+					<h3>Pre-requisites</h3>
+					<ul>
+						<li>HTML</li>
+						<li>Document Object Model (DOM)</li>
+						<li>CSS Selectors</li>
+					</ul>
+				</section>
+ -->
+<!--  				<section>
+ 					<h2>Introductions</h2>
+ 				</section>
+ -->
+ 				<section>
+ 					<h3>Set-up</h3>
+ 					<p>http://prcweb.co.uk/d3workshop/code.zip</p>
+ 					<p>Notes &amp; project templates</p>
+ 				</section>
+
+
+ 				<section>
+ 					<h3>Peter Cook</h3>
+ 					<p>Data visualisation, consultancy and training</p>
+ 					<a href="http://prcweb.co.uk"><img src="img/portfolio.jpg" width="600"></a>
+ 					<p>prcweb.co.uk / @prcweb</p>
+ 				</section>
+
+<!--  				<section>
+ 					<h3>Order of play</h3>
+ 					<ul>
+ 						<li>Aims of the workshop</li>
+	 					<li>Data visualisation and D3</li>
+	 					<li>5 Ingredients of a D3 visualisation</li>
+	 					<li>Examples &amp; exercises</li>
+	 				</ul>
+ 				</section>
+ -->
+ 				<section>
+ 					<section>
+	 					<h3>Workshop overview (1/2)</h3>
+	 					<h4>Understanding</h4>
+	 					<p>Why and when to choose D3</p>
+	 					<p>Selections</p>
+	 					<p>Data joins</p>
+	 					<p>Updates &amp; transitions</p>
+	 					<p>Scales &amp; axes</p>
+	 					<p>Data loading</p>
+	 					<p>SVG</p>
+ 					</section>
+
+ 					<section>
+	 					<h3>Workshop overview (2/2)</h3>
+	 					<h4>Practical skills</h4>
+	 					<p>Loading data</p>
+	 					<p>Making and updating selections</p>
+	 					<p>Implement the update pattern</p>
+	 					<p>Implement a bar chart and a scatter plot</p>
+	 					<p>Implement a simple custom chart</p>
+ 					</section>
+ 				</section>
+
+ 				<section>
+ 					<h3>Schedule</h3>
+ 					<p>AM: D3 fundamentals, bar chart example, circles example</p>
+ 					<p>PM: Scatter plot + more examples</p>
+ 				</section>
+
+<!--  			<section>
+ 					<h3>Data visualisation and D3</h3>
+ 				</section>
+ -->
+<!--  				<section>
+					<section>
+						<h3>What is data visualisation?</h3>
+						<p><q>The graphical representation of information</q></p>
+						<img src="img/data-visualisation-bkgrd.jpg">
+					</section>
+
+					<section>
+						<h3>Data visualisation examples</h3>
+						<p><a href="http://www.howoldwerethey.com/">How old were they?</a></p>
+						<p><a href="http://hint.fm/wind/">Wind map</a></p>
+						<p><a href="http://moritz.stefaner.eu/projects/remixing-rosling/">Fertility and life expectancy</a></p>
+						<p><a href="http://www.hewlett.org/grants-tool/index">Grants</a></p>
+					</section>
+				</section>
+ -->
+				<section>
+					<section>
+						<h3>Introducing D3</h3>
+						<!-- <p>D3 is a JavaScript library for manipulating documents based on data.</p> -->
+						<!-- <p>Huh?</p> -->
+						<p>D3 is a JavaScript library for manipulating HTML &amp; SVG based on data.</p>
+						<br>
+						<p class="fragment">...allowing us to build amazing data visualisations in the browser...</p>
+					</section>
+	
+					<section>
+						<h3>D3 examples</h3>
+						<p><a href="https://github.com/mbostock/d3/wiki/Gallery">D3 gallery</a></p>
+						<p><a href="http://www.nytimes.com/interactive/2012/02/13/us/politics/2013-budget-proposal-graphic.html?_r=0">Obama's Budget Proposal (NYT)</a></p>
+						<!-- <p><a href="http://www.nytimes.com/interactive/2013/05/25/sunday-review/corporate-taxes.html">Tax rates</a></p> -->
+						<p><a href="http://visualising.org/galleries/made-d3js">Made with D3 (visualizing.org)</a></p>
+					</section>
+
+<!-- 					<section>
+						<h3>Other JavaScript visualisation libraries</h3>
+						<ul>
+							<li>Highcharts (SVG charting library)
+							<li>InfoVis (Canvas charting library)</li>
+							<li>Processing.js (Canvas graphics library)</li>
+							<li>Raphael.js (SVG graphics library)</li>
+						</ul>
+						<p>___</p>
+						<p>also Excel, Tableau, Google Chart Tools, Processing, R etc.</p>
+					</section>
+ -->
+					<section>
+						<h3>Why D3?</h3>
+						<p>Ideal for manipulating HTML/SVG based on data</p>
+						<p>Powerful</p>
+						<p>Robust</p>
+						<p>Good documentation</p>
+						<p>Few limitations on what can be created</p>
+						<br>
+						<p class="fragment">Imagination is the limit</p>
+						<br>
+						<!-- <p class="fragment"><a href="http://wimbledon.prcweb.co.uk/">Example</a></p> -->
+					</section>
+
+				</section>
+
+				<section>
+					<h3>Overview of D3</h3>
+					<p>select/join/update for <em>binding</em> data elements to DOM elements</p>
+					<p>components (e.g. scales, axes, csv, colour, svg, time, geography, projections)<p>
+					<p>layouts (e.g. trees and networks)</p>
+				</section>
+
+ 				<section>
+ 					<h3>5 Ingredients of a D3 Visualisation</h3>
+ 				</section>
+
+				<section>
+					<h3>5 Ingredients of a D3 Visualisation</h3>
+					<p>Data</p>
+					<p>The view (DOM/HTML/SVG)</p>
+					<p>Data join</p>
+					<p>Update</p>
+					<p>Interaction</p>
+				</section>
+
+				<section>
+<!-- 					<section>
+						<h3>1. Data</h3>
+						<p>Data acquisition &rarr; structured data &rarr; visualisation</p>
+					</section>
+ -->
+					<section>
+						<h3>Data for D3</h3>
+						<p>Arrays</p>
+<pre><code>
+	[ 1, 2, 3, 4, 5 ]
+
+	[ 'this', 'is', 'my', 'data' ]
+
+	[ { 'name': 'Andy', value: 20 },
+	  { 'name': 'Peter', value: 30 } ]
+
+	[ [ 1, 2 ], [ 3, 4 ] ]
+
+</code></pre>
+						<br>
+						<p>Data arrays may contain numbers, strings, arrays &amp; objects</p>
+						<!-- <p>(Trees, graphs etc. can be transformed to arrays using d3.layout)</p> -->
+<!-- 						<p>Objects</p>
+<pre><code>
+	{} (tree)
+	{} (graph)
+
+</code></pre>						
+ -->					</section>
+
+<!-- 					<section>
+						<h3>Data structure design</h3>
+						<p>Very important to get right</p>
+						<p>Considerations:</p>
+						<p>- dimensionality/topology</p>
+						<p>- what am I trying to show?</p>
+						<p>- re-use? used in future?</p>
+					</section>
+ -->				</section>
+
+
+
+				<section>
+					<section>
+						<h3>2. The view</h3>
+						<p>Document Object Model (DOM)</p>
+						<p>HTML</p>
+						<p>Scalable Vector Graphics (SVG)</p>
+						<p>CSS</p>
+					</section>
+
+					<section>
+						<h3>Example HTML &amp; SVG</h3>
+<pre><code>&lt;!doctype html&gt;
+&lt;html lang=en&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;My chart&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;My chart&lt;/h1&gt;
+    &lt;svg&gt;
+      &lt;rect x="40" y="140" width="100" height="200" 
+                style="fill: steelblue;"/&gt;
+      &lt;rect x="140" y="40" width="100" height="300" 
+                style="fill: darkseagreen;"/&gt;
+    &lt;/svg&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+						<br>
+						<p><a href="/dom-html-svg.html">View</a></p>	
+					</section>
+
+					<section>
+						<h3>SVG elements</h3>
+						<img src="img/svg-elements.jpg">
+					</section>
+
+<!-- 					<section>
+						<h3>Common SVG elements (1/2)</h3>
+<pre><code>
+// A line (defined by start and end points)
+&lt;line x1="10" y1="10" x2="100" y2="10"&gt;
+
+// A rectangle (defined by top-left point, width and height)
+&lt;rect x="10" y="10" width="50" height="100"&gt;
+
+// A circle (defined by centre point and radius)
+&lt;circle cx="50" cy="50" r="40"&gt;
+
+// Text (x,y defines start of baseline)
+&lt;text x="10" y="10"&gt;My text&lt;/text&gt;
+
+</code></pre>
+					</section>
+					<section>
+						<h3>Common SVG elements (2/2)</h3>
+<pre><code>
+// PATHS
+
+// A square (move to 5,5, move 8 right, 8 down, 8 left then close)
+&lt;path d="M5,5 l8,0 l0,8 l-8,0 Z"&gt;
+
+// An arc (start at 20,20, draw arc)
+// Arc parameters are: x-rad,y-rad x-rot large-arc sweep x2,y2
+&lt;path d="M20,20 A20,20 0 0 1 40,40"&gt;
+
+</code></pre>
+					</section>
+
+					<section>
+						<h3>Common SVG styling</h3>
+<pre><code>
+/* element outlines */
+stroke: red; // stroke colour
+stroke-width: 1px;
+stroke-opacity: 0.8;
+
+/* element insides */
+fill: #555;
+fill-opacity: 1;
+
+/* text */
+fill: #6e722B; // text colour
+font-size: 20px;
+
+</code></pre>
+					</section>
+ -->				</section>
+
+
+
+				<section>
+					<section>
+						<h3>3. The data join</h3>
+						<p>Joins a data array with DOM elements</p>
+						<br>
+						<p>e.g. join an array to circle elements</p>
+						<img src="img/data-join2.png">
+						<br>
+<!-- <pre><code>			[
+			10,  ->  &lt;div&gt;&lt;/div&gt;
+			40,  ->  &lt;div&gt;&lt;/div&gt;
+			20,  ->  &lt;div&gt;&lt;/div&gt;
+			20,  ->  &lt;div&gt;&lt;/div&gt;
+			50   ->  &lt;div&gt;&lt;/div&gt;
+			]
+</code></pre>
+ -->
+ <!-- <p>Join an array of objects to rect elements</p>
+<pre><code>		[
+		{name: 'John', score: 10},  ->  &lt;rect&gt;&lt;/rect&gt;
+		{name: 'Kate', score: 30},  ->  &lt;rect&gt;&lt;/rect&gt;
+		{name: 'Andy', score: 20},  ->  &lt;rect&gt;&lt;/rect&gt;
+		]
+</code></pre>
+ -->						<!-- <p>[ 1, 2, 3, 4, 5 ] -> 5 (equal r) circles</p> -->
+<!-- 						<p>[ 'red', 'yellow', 'blue' ] -> 3 squares</p>
+ -->					</section>
+
+<!-- 					<section>
+						<p>Each data element is stored on the DOM element (__data__)</p>
+						<img src="img/data-join-console.jpg">
+					</section>
+ -->				</section>
+
+
+
+
+				<section>
+					<section>
+						<h3>4. The update (1/2)</h3>
+						<p>Creation and removal of DOM elements</p>
+						<img src="img/data-join-enter2.png">
+						<!-- <p>[ 1, 2, 3, 4, 5, 6 ] &rarr; O O O O O Onew</p> -->
+						<br>
+					</section>
+
+					<section>
+						<h3>4. The update (2/2)</h3>
+						<p>Update attributes and style of DOM elements based on the joined data</p>
+						<img src="img/data-join-update4.png">
+						<!-- <p><q>I want the circle radii to be set to the data values</q></p> -->
+					</section>
+				</section>
+
+				<section>
+					<h3>5. Interaction</h3>
+					<p>Set-up event handlers on DOM elements</p>
+						<img src="img/data-join-event2.png">
+				</section>
+
+
+				<section>
+					<h1>Examples</h1>
+				</section>
+
+				<!-- #### Examples -->
+				<section>
+					<section>
+						<h3>Bar chart</h3>
+						<img src="img/bar-chart.png">
+					</section>
+					<section>
+						<h3>We will cover:</h3>
+						<p>D3 selections</p>
+						<p>Selection updates</p>
+						<p>Data join</p>
+						<p>Update function(d)</p>
+						<p>Enter/exit</p>
+						<p>Update pattern</p>
+					</section>
+
+					<section>
+						<h3>Update pattern</h3>
+						<ol>
+							<li>Make selection</li>
+							<li>Join the data</li>
+							<li>Append entering elements</li>
+							<li>Remove exiting elements</li>
+							<li>Update remaining elements</li>
+						</ol>
+					</section>
+<!-- 					<section>
+						<h3>References</h3>
+						<p>Selections https://github.com/mbostock/d3/wiki/Selections</p>
+						<p>General update pattern: http://bl.ocks.org/mbostock/3808218</p>
+					</section>
+ -->				</section>
+
+				<section>
+					<section>
+						<h3>Circle grid</h3>
+						<img src="img/circle-grid.png">
+					</section>
+					<section>
+						<h3>We will cover:</h3>
+						<p>SVG circle element</p>
+						<p>SVG g element (group)</p>
+						<p>SVG transform</p>
+						<p>Updating using function(d, i)</p>
+						<p>Scale functions</p>
+						<p>Transitions</p>
+					</section>
+
+<!-- 					<section>
+						<h3>References</h3>
+						<p>Scales https://github.com/mbostock/d3/wiki/Scales</p>
+						<p>Transitions https://github.com/mbostock/d3/wiki/Transitions</p>
+					</section>
+ -->				</section>
+
+				<section>
+					<section>
+						<h3>Scatter plot</h3>
+						<img src="img/scatter.png">
+					</section>
+					<section>
+						<h3>We will cover:</h3>
+						<p>Using real data</p>
+						<p>Joining array of objects</p>
+						<p>selection.call()</p>
+						<p>Axes</p>
+						<p>Axes labelling</p>
+						<p>Event handling</p>
+					</section>
+<!-- 					<section>
+						<h3>References</h3>
+						<p>selection.call() https://github.com/mbostock/d3/wiki/Selections#wiki-call</p>
+						<p>d3.svg.axis https://github.com/mbostock/d3/wiki/SVG-Axes</p>
+						<p>Event handling https://github.com/mbostock/d3/wiki/Selections#wiki-on</p>
+						<p>SVG events http://www.w3.org/TR/SVG/interact.html#UIEvents</p>
+					</section>
+ -->				</section>
+
+
+<!-- 				<section>
+					<section>
+						<h3>Table</h3>
+						<img src="img/table.png">
+					</section>
+					<section>
+						<h3>We will cover:</h3>
+						<p>Loading CSV data</p>
+						<p>Nested selections &amp; joins</p>
+					</section>
+					<section>
+						<h3>References</h3>
+						<p>CSV https://github.com/mbostock/d3/wiki/CSV</p>
+						<p>Nested selections http://bost.ocks.org/mike/nest/</p>
+					</section>
+				</section>
+
+-->
+				<section>
+					<section>
+						<h3>Tree</h3>
+						<img src="img/tree.png">
+					</section>
+					<section>
+						<h3>We will cover:</h3>
+						<p>Tree layout</p>
+						<p>Interaction</p>
+					</section>
+					<section>
+						<h3>References</h3>
+						<p>Tree layout https://github.com/mbostock/d3/wiki/Tree-Layout</p>
+					</section>
+				</section>
+<!--
+
+				<section>
+					<section>
+						<h3>Food grid</h3>
+						<img src="img/food-grid.jpg">
+					</section>
+				</section>
+ -->
+
+ 				<section>
+ 					<h2>Sum up</h2>
+ 				</section>
+
+				<section>
+ 					<h3>Aims of the workshop (1/2)</h3>
+ 					<h4>Understanding</h4>
+ 					<p>Why and when to choose D3</p>
+ 					<p>Selections</p>
+ 					<p>Data joins</p>
+ 					<p>Updates &amp; transitions</p>
+ 					<p>Scales &amp; axes</p>
+ 					<p>Data loading</p>
+ 					<p>SVG</p>
+				</section>
+
+				<section>
+ 					<h3>Aims of the workshop (1/2)</h3>
+ 					<h4>Practical skills</h4>
+ 					<p>Loading data</p>
+ 					<p>Making and updating selections</p>
+ 					<p>Implement the update pattern</p>
+ 					<p>Implement a bar chart and a scatter plot</p>
+ 					<p>Implement a simple custom chart</p>
+				</section>
+
+				<section>
+					<h3>Moving on</h3>
+					<p>Nested selections</p>
+					<p>Indexing joins</p>
+					<p>Layouts</p>
+					<p>Mapping</p>
+					<p>More advanced SVG</p>
+					<p>SVG helpers</p>
+					<p>Reusable components</p>
+					<p>More complex visualisations</p>
+				</section>
+
+				<section>
+					<h3>Thank you</h3>
+					<p>Questions</p>
+					<p>Feedback</p>
+					<p>___</p>
+					<p>Peter Cook / peter@prcweb.co.uk / @prcweb</p>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
