@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Beyond the Bar Chart</title>
+
+		<meta name="description" content="A presentation on modern data visualisation">
+		<meta name="author" content="Peter Cook">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Beyond the Bar Chart</h1>
+					<h3>Creative data visualisation</h3>
+					<p>
+						<small>By <a href="http://prcweb.co.uk">Peter Cook</a> / <a href="http://twitter.com/prcweb">@prcweb</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Bar charts</h2>
+					<img src="img/barcharts.jpeg">
+				</section>
+
+				<section>
+					<h2>Pie charts</h2>
+					<img src="img/piecharts.jpeg">
+				</section>
+
+				<section>
+					<h2>Line graphs</h2>
+					<img src="img/linegraphs.jpeg">
+				</section>
+
+				<section>
+					<h2>Scatter plots</h2>
+					<img src="img/scatterplots.jpeg">
+				</section>
+
+				<section>
+					<h1>Any others?</h2>
+				</section>
+
+				<section>
+					<h2>New era of data visualisation</h2>
+					<p>Beautiful</p>
+					<p>Interactive</p>
+					<p>Live data</p>
+					<p>Ubiquitous</p>
+				</section>
+
+				<section>
+					<h1>Examples</h1>
+				</section>
+
+				<section>
+					<h2>This is Brighton Nerd Nite,</h2>
+					<h2>So here's some theory...</h2>
+					<p>We have:</p>
+					<ul>
+						<li>Data (e.g. people, countries, events etc.)</li>
+						<li>Connections (e.g. friendship, likes, similar to, defeated)</li>
+					</ul>
+				</section>
+
+				<section>
+					<p>Data visualisation is the mapping of data (i.e. things) into:</p>
+					<ul>
+						<li>shape</li>
+						<li>size</li>
+						<li>position</li>
+						<li>colour</li>
+					</ul>
+				</section>
+
+<!-- 				<section>
+					<p>and connections into:</p>
+					<ul>
+						<li>lines/curves</li>
+						<li>position</li>
+					</ul>
+				</section>
+ -->
+				<section>
+					<h2>Example</h2>
+					<img src="img/wordfrequency.jpg">
+					<p>Data mapped to rectangles</p>
+				</section>
+
+				<section>
+					<h2>Another example</h2>
+					<img src="img/taxes.jpg">
+					<p>Data mapped to circles</p>
+				</section>
+
+				<section>
+					<p>We're not thinking in terms of bar charts, pie charts etc.</p>
+					<P>Instead we're asking:</p>
+					<blockquote>How we can map our data into shape, size, position &amp; colour?</blockquote>
+				</section>
+
+				<section>
+					<h2>So, how does this help us?</h2>
+					<p>We can get more creative with data</p>
+				</section>
+
+				<section>
+					<p>How many different visualisations from one set of data?</p>
+				</section>
+
+				<section>
+					<h2>The data</h2>
+				</section>
+
+				<section>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
