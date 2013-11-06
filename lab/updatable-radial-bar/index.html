@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+	    <title>Updatable Radial Bar Chart</title>
+	    <link rel="stylesheet" href="css/style.css">
+	    <script type="text/javascript">
+		      var _gaq = _gaq || [];
+		      _gaq.push(['_setAccount', 'UA-37639745-1']);
+		      _gaq.push(['_setDomainName', 'prcweb.co.uk']);
+		      _gaq.push(['_trackPageview']);
+
+		      (function() {
+		        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		      })();
+		    </script>
+	</head>
+
+	<body>
+    <div id="chart"></div>
+    <button type="button" id="update">Update</button>
+
+    <p>A radial bar chart implemented using the <a href="https://github.com/prcweb/d3-radialbar">reusable radial bar chart</a> D3 component. (<a href="http://prcweb.co.uk/radialbarchart">More information</a> about this component.)<p>
+
+    <p>This example demonstrates the chart responding to data updates. Each time the 'update' button is clicked:</p>
+    <ul>
+    	<li>the data is randomised</li>
+    	<li>the data is re-joined to the chart container</li>
+    	<li>the chart function is re-invoked</li>
+    </ul>
+
+    <p>The update function is as simple as:</p>
+
+
+    <pre>
+function update() {
+  initData(); // Randomises the data
+
+  d3.select('#chart')
+    .datum(data)
+    .call(chart);
+}</pre>
+
+		<p>A <a href="https://github.com/prcweb/d3-radialbar/blob/master/update-example.html">code example</a> is available in the project directory.</p>
+
+		<footer>
+			<p>Built by <a href="http://prcweb.co.uk">Peter Cook</a> using <a href="http://d3js.org">D3</a>.</p>
+			<div id="social">
+				<a href="https://twitter.com/prcweb" class="twitter-follow-button" data-show-count="false">Follow @prcweb</a>
+				<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-url="http://prcweb.co.uk/lab/updatable-radial-bar" data-text="Updatable radial bar chart ">Tweet</a>
+				<div class="fb-like" data-href="http://prcweb.co.uk/lab/updatable-radial-bar" data-send="false" data-layout="button_count" data-width="150" data-show-faces="false"></div>
+			</div>
+		</footer>
+
+		<script src="js/d3.v3.min.js"></script>
+    <script src="js/radialBarChart.js"></script>
+    <script src="js/main.js"></script>
+
+
+	  <!-- Twitter -->
+	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	  <!-- Facebook -->
+	  <div id="fb-root"></div>
+	  <script>(function(d, s, id) {
+	    var js, fjs = d.getElementsByTagName(s)[0];
+	    if (d.getElementById(id)) return;
+	    js = d.createElement(s); js.id = id;
+	    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=220656758000337";
+	    fjs.parentNode.insertBefore(js, fjs);
+	  }(document, 'script', 'facebook-jssdk'));</script>
+	</body>
+</html>

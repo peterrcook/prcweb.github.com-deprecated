@@ -1,0 +1,77 @@
+/* Document styling */
+body {
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	width: 840px;
+	margin: 0 auto 50px auto;
+	font-size: 14px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 20px;
+}
+
+.twitter-share-button {width: 82px !important;}
+
+#chart {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 14px;
+}
+#chart path {
+  fill: none;
+}
+svg {
+  margin: 10px 150px;
+}
+
+/* layers */
+#chart .layer-0 path {
+  fill: steelblue;
+}
+#chart .layer-1 path {
+  fill: white !important;
+  opacity: 0.3;
+  stroke-width: 2px;
+  stroke: #999;
+}
+
+/* Outer circle, tick-circles and spokes */
+#chart circle.outer {
+  stroke: #aaa;
+  stroke-dasharray: 4, 4;  
+}
+#chart .tick-circles circle {
+  stroke: #ddd;
+  stroke-dasharray: 2, 2;  
+}
+#chart .spokes line {
+  stroke: #666;
+  stroke-width: 0.2;
+}
+
+/* Axis */
+#chart .axis text {
+  font-size: 11px;
+}
+#chart .axis path {
+  stroke: #999;
+  shape-rendering: crispEdges;
+}
+#chart .axis line {
+  stroke: #999;
+  shape-rendering: crispEdges;
+}
+
+/* Labels */
+#chart .labels text {
+  fill: #333;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+/* update button */
+#update {
+  width: 100px;
+  height: 30px;
+  cursor: pointer;
+}
