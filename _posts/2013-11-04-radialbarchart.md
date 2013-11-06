@@ -60,4 +60,6 @@ comments: true
 
 <p>The chart automatically adapts to the number of data elements and many of the chart's attributes may be configured including the bar colours, the scale domain and whether the labels should be coloured. It's likely that more configuration options will be added.</p>
 
+<p>The chart also handles <a href="/lab/updatable-radial-bar">data updates</a> with transitions.</p>
+
 <p>This chart is released under the MIT license and the project and further examples can be found on <a href="https://github.com/prcweb/d3-radialbar">github</a>.</p>
