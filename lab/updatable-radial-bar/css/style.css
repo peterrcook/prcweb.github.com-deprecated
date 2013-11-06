@@ -23,6 +23,10 @@ pre {
 svg {
   margin: 10px 150px;
 }
+#update {
+  margin-left: 370px;
+  margin-bottom: 20px;
+}
 
 /* layers */
 #chart .layer-0 path {
