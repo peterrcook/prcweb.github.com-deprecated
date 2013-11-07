@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+	    <title>UK Temperature 1910-2012</title>
+	    <link rel="stylesheet" href="css/style.css">
+	</head>
+
+	<body>
+		<div id="chart">
+			<svg>
+			</svg>
+		</div>
+		<div id="about">
+			<h1>UK Temperature (1910-2012)</h1>
+			<p>UK temperature graphs from 1910 to 2012. Scroll down to reveal the years.</p>
+			<p>Chart development by <a href="http://prcweb.co.uk">Peter Cook</a>. Contains public sector information licensed under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/">Open Government Licence v1.0</a> (<a href="http://www.metoffice.gov.uk/climate/uk/datasets/#">view data source</a>).</p>
+      <div id="social">
+        <a href="https://twitter.com/prcweb" class="twitter-follow-button" data-show-count="false">Follow @prcweb</a>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-url="http://prcweb.co.uk/lab/uktemperaturelines" data-text="UK temperature graphs ">Tweet</a>
+        <div class="fb-like" data-href="http://prcweb.co.uk/lab/uktemperaturelines" data-send="false" data-layout="button_count" data-width="150" data-show-faces="false"></div>
+      </div>
+		</div>
+
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<script src="js/d3.v3.min.js"></script>
+		<script src="js/underscore-min.js"></script>
+		<script src="js/temperature.js"></script>
+
+	  <!-- Twitter -->
+	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	  <!-- Facebook -->
+	  <div id="fb-root"></div>
+	  <script>(function(d, s, id) {
+	    var js, fjs = d.getElementsByTagName(s)[0];
+	    if (d.getElementById(id)) return;
+	    js = d.createElement(s); js.id = id;
+	    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=220656758000337";
+	    fjs.parentNode.insertBefore(js, fjs);
+	  }(document, 'script', 'facebook-jssdk'));</script>
+	</body>
+</html>
