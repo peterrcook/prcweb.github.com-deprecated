@@ -6,6 +6,7 @@ var s = [
   "d3.selectAll('tr').selectAll('td')",
   "d3.selectAll('table').selectAll('td')",
   "d3.selectAll('table').select('td')",
+  "d3.selectAll('table').selectAll('td:nth-child(2)')"
 ];
 
 function unhover() {
