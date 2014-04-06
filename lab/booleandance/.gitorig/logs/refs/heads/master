@@ -1,0 +1,4 @@
+0000000000000000000000000000000000000000 017f794da75368fb139bef108c0ccc6061c4c3ee Peter Cook <peter@prcweb.co.uk> 1396705247 +0100	commit (initial): Initial commit
+017f794da75368fb139bef108c0ccc6061c4c3ee bbcc35480f27a7aa5a23cfea1f177a4fff597e2b Peter Cook <peter@prcweb.co.uk> 1396705746 +0100	commit: Use filtered data
+bbcc35480f27a7aa5a23cfea1f177a4fff597e2b 8a1b943cf6d9b1ba012f6f833045d3d822a84771 Peter Cook <peter@prcweb.co.uk> 1396712123 +0100	commit: Logic operators or, and and xor
+8a1b943cf6d9b1ba012f6f833045d3d822a84771 2755dbc418e84f854155a21b46245b1a61670740 Peter Cook <peter@prcweb.co.uk> 1396717067 +0100	commit: Add option menu
