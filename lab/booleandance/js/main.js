@@ -59,6 +59,7 @@
           .classed('selected', false);
         d3.select(this)
           .classed('selected', true);
+        console.log(frameNum,dataLength)
 
         // Restart if ended
         if(frameNum === dataLength) {
@@ -75,7 +76,7 @@
   ----*/
   function update() {
     // Animation loop timing thanks to http://creativejs.com/resources/requestanimationframe/
-    if(frameNum < dataLength - 1) {
+    if(frameNum < dataLength) {
       setTimeout(function() {
         requestAnimationFrame(update);
         clearContext();
