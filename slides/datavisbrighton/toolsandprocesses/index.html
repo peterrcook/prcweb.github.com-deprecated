@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Data Visualisation: Tools and Processes</title>
+
+		<meta name="author" content="Peter Cook">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h2>Data Visualisation:</h2>
+					<h3>Tools and Processes</h3>
+					<p>Data Visualisation Brighton</p>
+					<p>@datavisbrighton</p>
+					<br>
+					<p>Slides by Peter Cook / @animateddata</p>
+				</section>
+
+
+				<section>
+						<h2>Discovery &amp; Presentation</h2>
+				</section>
+
+				<section>
+					<section>
+						<h2>Discovery</h2>
+					</section>
+
+					<section>
+						<h3>What is discovery?</h3>
+						<p>It starts with questions</p>
+						<p>Data exploration</p>
+						<p>Data analysis</p>						
+					</section>
+
+					<section>
+						<h3>Discovery tools</h3>
+						<p>Spreadsheets (e.g. Excel, OpenOffice)</p>
+						<p>Tableau</p>
+						<p>R + ggplot2&ast;</p>
+						<p>Python / ipython / pandas / matplotlib&ast;</p>
+						<p>(&ast; = free)</p>
+					</section>
+
+<!-- 					<section>
+						<h3>Excel</h3>
+						<img src="img/excel0.jpg">
+						<img src="img/excel1.jpg">
+						<p><a href="www.datadrivenconsulting.com/2010/02/data-visualization-challenge-my-dashboard-design/">http://www.datadrivenconsulting.com/2010/02/data-visualization-challenge-my-dashboard-design/</a></p>
+					</section>
+
+					<section>
+						<h3>Excel</h3>
+						<img src="img/powermap.jpg">
+						<p>Power Map plug-in</p>
+					</section>
+ -->
+					<section>
+						<h3>Tableau</h3>
+						<img src="img/tableau.jpg">
+					</section>
+
+<!-- 					<section>
+						<h3>Tableau examples</h3>
+						<p>See <a href="http://www.tableausoftware.com/public/gallery">http://www.tableausoftware.com/public/gallery</a></p>
+					</section>
+ -->
+					<section>
+						<h3>R + ggplot2</h3>
+						<img src="img/ggplot2.png">
+						<pre><code>
+  qplot(Sepal.Length, Petal.Length, data = iris, color = Species,
+	  size = Petal.Width)
+						</code></pre>
+						<p>blog.echen.me/2012/01/17/quick-introduction-to-ggplot2/</p>
+					</section>
+
+					<section>
+						<h3>iPython Notebook / matplotlib</h3>
+						<img src="img/matplotlib.png">
+						<pre><code>titanic = pd.read_excel("data/titanic.xls", "titanic")
+bp = titanic.boxplot(column='age', by='pclass', grid=False)
+for i in [1,2,3]:
+    y = titanic.age[titanic.pclass==i].dropna()
+    x = np.random.normal(i, 0.04, size=len(y))
+    plot(x, y, 'r.', alpha=0.2)</code></pre>
+						<p><a href="http://nbviewer.ipython.org/urls/gist.github.com/fonnesbeck/5850463/raw/a29d9ffb863bfab09ff6c1fc853e1d5bf69fe3e4/3.+Plotting+and+Visualization.ipynb">Search for fonnesbeck plotting and visualization</a></p>
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+						<h2>Presentation</h2>
+					</section>
+
+					<section>
+						<h3>Desktop</h3>
+						<h3>Browser-based</h3>
+					</section>
+
+					<section>
+						<h3>Desktop</h3>
+						<p>Excel</p>
+						<p>Tableau</p>
+						<p>R + ggplot2 (free)</p>
+						<p>Python / ipython / pandas / matplotlib (free)</p>
+						<p>NodeBox (free)</p>
+					</section>
+
+					<section>
+						<h3>Excel</h3>
+						<img src="img/excel0.jpg">
+						<img src="img/excel1.jpg">
+						<p><a href="www.datadrivenconsulting.com/2010/02/data-visualization-challenge-my-dashboard-design/">http://www.datadrivenconsulting.com/2010/02/data-visualization-challenge-my-dashboard-design/</a></p>
+					</section>
+
+					<section>
+						<h3>Excel</h3>
+						<img src="img/powermap.jpg">
+						<p>Power Map plug-in</p>
+					</section>
+
+					<section>
+						<h3>Tableau examples</h3>
+						<a href="http://www.theguardian.com/news/datablog/interactive/2011/nov/23/pay-annual-survey-hours-earnings-visualised"><img src="img/tableau-gender.jpg"></a>
+						<p>See <a href="http://www.tableausoftware.com/public/gallery">http://www.tableausoftware.com/public/gallery</a></p>
+					</section>
+
+					<section>
+						<h3>R / ggplot2</h3>
+						<img src="img/ggplot2-collage.jpg">
+					</section>
+
+					<section>
+						<h3>Python / matplotlib</h3>
+						<img src="img/matplotlib-collage.jpg">
+					</section>
+
+					<section>
+						<h3>Python / bokeh</h3>
+						<img src="img/bokeh.jpg" width="500">
+						<p><a href="http://bokeh.pydata.org/docs/gallery/les_mis.html">Example</a></p>
+					</section>
+
+					<section>
+						<h3>NodeBox 1</h3>
+						<img src="img/nodebox1.jpg">
+						<p><a href="http://nodebox.net/">NodeBox</a></p>
+					</section>
+
+					<section>
+						<h3>NodeBox 3</h3>
+						<img src="img/nodebox.jpg">
+						<p><a href="http://nodebox.net/">NodeBox</a></p>
+					</section>
+
+					<section>
+						<h3>Browser-based<br>(JavaScript libraries)</h3>
+						<p>Highcharts, Google Charts etc.</p>
+						<p>D3</p>
+						<p>Custom coded (SVG, Canvas)</p>
+						<p>See also <a href="http://selection.datavisualization.ch/">datavisualization.ch</a></p>
+					</section>
+
+					<section>
+						<h3>Highcharts, Google Charts etc.</h3>
+						<p>Off-the-shelf charts</p>
+						<img src="img/highcharts.jpg">
+					</section>
+
+					<section>
+						<h3>D3</h3>
+						<p>Usually requires custom coding</p>
+						<a href="http://d3js.org"><img src="img/d3.jpg"></a>
+						<p><a href="http://d3js.org">d3js.org</a></p>
+					</section>
+
+					<section>
+						<h3>Built with D3</h3>
+						<p>Custom coded</p>
+						<p>Driven from tab-separated-value data</p>
+						<img src="img/tax.jpg">
+						<p><a href="http://www.nytimes.com/interactive/2013/05/25/sunday-review/corporate-taxes.html">www.nytimes.com/interactive/2013/05/25/sunday-review/corporate-taxes.html</a></p>
+					</section>
+
+<!-- 					<section>
+						<h3>BBC historic server data</h3>
+						<p>Custom coded</p>
+						<p>HTML5 Canvas element</p>
+						<img src="img/bbc.png">
+						<p><a href="http://www.bbc.co.uk/blogs/internet/posts/BBC-Online-20-data-visualisation">www.bbc.co.uk/blogs/internet/posts/BBC-Online-20-data-visualisation</a></p>
+					</section>
+ -->
+				</section>
+
+				<section>
+					<section>
+						<h3>My approach</h3>
+						<p>Primarily programmatic (JavaScript)</p>
+						<p>More often than not, driven from spreadsheet (CSV) data</p>
+						<p>Usually use D3, but not always</p>
+					</section>
+
+					<section>
+						<h3>Discovery</h3>
+						<p>Mix of Excel &amp; custom scripts</p>
+						<p>Moving towards Python, pandas etc.</p>
+					</section>
+
+					<section>
+						<h3>Presentation</h3>
+						<p>Browser based</p>
+						<p>Load data in from csv or JSON</p>
+						<p>Simple reformatting<p>
+						<p>D3 &amp; custom code to present data</p>
+					</section>
+
+					<section>
+						<h3>Example</h3>
+						<img src="img/migration.jpg">
+					</section>
+
+					<section>
+						<p>Data from World Bank</p>
+						<img src="img/migration-sheet.jpg">
+						<p>Matrix of migratory flows (spreadsheet)</p>
+					</section>
+
+					<section>
+						<p>Convert into JSON format using Python (offline)</p>
+						<pre><code>
+{"Canada": 
+  {"totalIn": 7202340,
+  "totalOut": 1185392,
+  "out": [
+    {"country": "United States", "amount": 834945}
+  ],
+  "in": [
+    {"country": "China", "amount": 543573},
+    {"country": "Germany", "amount": 199541},
+    {"country": "Guyana", "amount": 101505},
+    {"country": "Hong Kong, China", "amount": 250786},
+    etc.
+						</code></pre>
+						<p>Python is often used server-side so this could be live data...</p>
+					</section>
+
+					<section>
+						<p>Simple webpage (one HTML file)</p>
+						<p>Load in JSON using JavaScript</p>
+						<p>Draw map using SVG, JavaScript and D3</p>
+						<a href="demo"><img src="img/migration.jpg"></a>
+					</section>
+				</section>
+
+				<section>
+					<h3>Summary</h3>
+					<p>Analysis / Presentation</p>
+					<p>App / Visual / Programmatic</p>
+				</section>
+
+
+				<section>
+					<h3>Visualisation: the Good, the Bad &amp; the Ugly</h3>
+					<p>22nd July 7.30pm</p>
+					<p>The Skiff, Brighton</p>
+					<p>@datavisbrighton</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

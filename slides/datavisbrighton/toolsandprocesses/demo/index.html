@@ -1,0 +1,81 @@
+<!-- (C) 2014 Peter Cook @prcweb prcweb.co.uk -->
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+	<title>Geo 1 (GeoJSON &amp; TopoJSON)</title>
+</head>
+
+<style>
+path {
+	fill: #bbb;
+	stroke: white;
+	stroke-width: 0.5px;
+}
+path.city {
+	fill: black;
+}
+text {
+	font-size: 12px;
+	font-family: sans-serif;
+	fill: #333;
+}
+</style>
+<body>
+
+	<svg width="960" height="650">
+		<g class="map"></g>
+	</svg>
+
+	<script src="js/d3.v3.js"></script>
+	<script src="js/underscore-min.js"></script>
+	<script src="js/topojson.v1.min.js"></script>
+	<script>
+
+// Projection function
+var projection = d3.geo.mercator()
+// var projection = d3.geo.orthographic()
+    .center([0, 0])
+    .scale(140)
+    .translate([480, 325]);
+
+var data = [];
+
+function countries() {
+	var geoGenerator = d3.geo.path()
+	    .projection(projection);
+
+	d3.json('data/countries.geo.json', function(err, geojson) {
+
+    // Draw each country as a path
+	  d3.select('svg g.map')
+	  	.selectAll('path')
+	  	.data(geojson.features)
+	  	.enter()
+	  	.append('path')
+	    .attr('d', geoGenerator);
+	});
+}
+
+// This could be done server-side
+function addMigrationDataToCountries(migration, places) {
+  _.each(migration, function(m, k) {
+    var country = k;
+
+    if(!_.has(places, country)) return;
+
+    data.push({
+      country: country,
+      in: m.totalIn,
+      out: m.totalOut
+    });
+  });
+}
+
+
+countries();
+
+	</script>
+
+	<script src="js/migration.js"></script>
+</body>
+</html>
