@@ -1,0 +1,33 @@
+rect {
+  fill: cadetblue;
+}
+
+circle {
+  fill: darkorange;
+}
+
+text {
+  font-family: helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  fill: darkslateblue;
+}
+
+line {
+  stroke: #666;
+  stroke-width: 2px;
+}
+
+path {
+  fill: lightcoral;
+}
+
+.nofill {
+  fill: none;
+  stroke: #666;
+  stroke-width: 2px;
+}
+
+.thick {
+  stroke-width: 5px;
+}

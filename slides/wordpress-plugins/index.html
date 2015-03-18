@@ -1,0 +1,339 @@
+<!-- (C) 2014 Peter Cook @prcweb prcweb.co.uk -->
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>How to Build a WordPress Plugin</title>
+
+		<meta name="description" content="How to Build a WordPress Plugin">
+		<meta name="author" content="Peter Cook">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<link rel="stylesheet" href="css/svg.css">
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+
+		<style>
+.reveal section img {
+	border: none;
+}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h2>How to Build a WordPress Plugin</h2>
+					<p>
+						<small>by <a href="http://prcweb.co.uk">Peter Cook</a> / <a href="http://twitter.com/prcweb">@prcweb</a> / <a href="http://www.prcweb.co.uk">prcweb.co.uk</a></small>
+					</p>
+				</section>
+
+				<section>
+          <h3>About me</h3>
+          <ul>
+	          <li>freelance web developer</li>
+	          <li>former life building CAD software (C++)</li>
+	          <li>web development, including WordPress</li>
+	          <li>mostly front-end now (e.g. data visualisation)</li>
+	        </ul>
+	        <p>-</p>
+	        <p>Please excuse any WordPress rustiness :)</p>
+				</section>
+
+ 				<section>
+ 					<h3>Aims</h3>
+ 					<p>What's a plugin?</p>
+ 					<p>A simple plugin</p>
+ 					<p>Shortcodes</p>
+ 					<p>JavaScript</p>
+ 					<p>Bar chart plugin</p>
+ 				</section>
+
+ 				<section>
+ 					<h3>What's a plugin?</h3>
+ 					<p>A reusable component that extends the functionality of WordPress</p>
+ 				</section>
+
+ 				<section>
+ 					<h3>A simple plugin</h3>
+ 					<p>Directory structure</p>
+<pre><code class="php">
+/simple
+  simple.php
+
+</code></pre>
+					<p>directory name = main php filename</p>
+				</section>
+
+ 				<section>
+ 					<h3>A simple plugin</h3>
+ 					<p>simple.php</p>
+<pre><code class="php">
+&lt;?php
+/*
+Plugin Name: Simple
+Plugin URI: http://prcweb.co.uk
+Description: Provides a simple shortcode
+Author: Peter Cook
+Version: 0.1
+Author URI: http://prcweb.co.uk
+*/
+function test_shortcode() {
+  return '&lt;h1&gt;Hey there!&lt;/h1&gt;';
+}
+add_shortcode('test-shortcode', 'test_shortcode');
+?&gt;
+
+</code></pre>
+				</section>
+
+				<section>
+					<h3>Enable in dashboard</h3>
+					<img src="img/simple-plugin-dashboard.png">
+				</section>
+
+				<section>
+					<h3>A slightly more fleshed out plugin</h3>
+					<pre><code class="php">
+					/simple
+					  simple.php
+					  uninstall.php
+					  /includes
+					  /images
+					  /js
+					  /css
+
+					</code></pre>
+
+				</section>
+
+				<section>
+					<h3>What can you do in a plugin?</h3>
+					<p>Pretty much anything... e.g.</p>
+					<ul>
+						<li>actions/filters</li>
+						<li>shortcodes</li>
+						<li>add custom post types</li>
+						<li>modify the admin panel</li>
+						<li>add widgets</li>
+						<li>rewrites</li>
+						<li>database create/read/update/delete</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Actions and filters</h3>
+					<p>'hooks' are fired throughout the page lifecycle</p>
+					<p>e.g. wp_head is fired when the &lt;head&gt; section is built</p>
+					<p>-</p>
+					<p>we can attach our own functions to these hooks</p>
+				</section>
+
+				<section>
+					<h3>Action</h3>
+					<pre><code class="php">
+function prcweb_meta_description() {
+  echo '&lt;meta name="description" content="How to make a plugin"&gt;';
+}
+
+add_action('wp_head', 'prcweb_meta_description');
+					</code></pre>
+
+				</section>
+
+				<section>
+					<h3>Filter</h3>
+					<pre><code class="php">
+function prcweb_modify_post_title($title) {
+  $title = strtoupper($title);
+  return $title;
+}
+
+add_filter('the_title', 'prcweb_modify_post_title');
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Add a submenu to admin</h3>
+					<pre><code class="php">
+function demo_admin_settings_page() {
+  echo 'My menu!';
+}
+
+function prcweb_demo_menu() {
+  add_options_page(
+    'DEMO settings',
+    'DEMO settings',
+    'manage_options',
+    'demo_admin_settings',
+    'demo_admin_settings_page');
+}
+
+add_action('admin_menu', 'prcweb_demo_menu');
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Bar chart plugin</h2>
+					<img src="img/barchart.png">
+				</section>
+
+				<section>
+					<h2>barchart shortcode</h2>
+					<img src="img/shortcode-admin.png">
+				</section>
+
+				<section>
+					<h3>Concepts</h3>
+					<p>Including JavaScript files (e.g. Highcharts.js)</p>
+					<p>Shortcode</p>
+					<p>Passing data into JavaScript scope</p>
+				</section>
+
+				<section>
+					<h3>Including JavaScript</h3>
+					<p>Register</p>
+					<pre><code class="php">
+wp_register_script($handle, $src, $deps, $ver, $in_footer);
+					</code></pre>
+					<p>Enqueue (include)</p>
+					<pre><code class="php">
+wp_enqueue_script($handle);
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>For example...</h3>
+					<pre><code class="php">
+wp_register_script('highcharts', 'http://code.highcharts.com/highcharts.js', array('jquery'));
+
+wp_register_script('highbar', plugin_dir_url(__FILE__).'js/highbar.js', array('highcharts'));
+					</code></pre>
+
+					<pre><code class="php">
+wp_enqueue_script('highbar');
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Shortcode</h3>
+					<p>Parameters</p>
+					<pre><code>
+[barchart data="40, 10, 40" categories="A,B,C"]
+					</code></pre>
+
+					<pre><code>
+add_shortcode('barchart', 'prcweb_barchart_shortcode');
+
+function prcweb_barchart_shortcode($attr) {
+  $attr['data']; // "40, 10, 40"
+  $attr['categories']; // "A,B,C"
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Passing data into JavaScript scope</h3>
+					<pre><code>
+wp_localize_script(
+  'highbar',
+  'animdata_chart_data',
+  array(
+    'data' => array(10, 20, 30),
+    'categories' => array('A', 'B', 'C')
+  )
+);
+					</code></pre>
+
+					<p>highbar.js</p>
+					<pre><code>
+console.log(animdata_chart_data);
+> Object {data: Array[3], categories: Array[3]}
+					</code></pre>
+
+				</section>
+
+				<section>
+					<h3>Bar chart plugin (PHP)</h3>
+					<ul>
+						<li>unpacks shortcode attributes and stores in self::$data</li>
+						<li>outputs chart div containers</li>
+						<li>includes highcharts.js and highbar.js</li>
+						<li>exports self::$data into animdata_chart_data JS variable</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Bar chart plugin (JavaScript)</h3>
+					<p>For each chart div container:</p>
+					<ul>
+						<li>extract the data from animdata_chart_data</li>
+						<li>create Highcharts chart</li>
+					</ul>
+				</section>
+
+
+				<section>
+					<h3>Thank you</h3>
+					<p>___</p>
+					<p>Peter Cook / peter@prcweb.co.uk / @prcweb</p>
+        </section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
